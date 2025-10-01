@@ -738,6 +738,33 @@
                 font-size: 1.2em;
             }
         }
+
+/* botão WhatsApp flutuante */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 2em;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+.whatsapp-float i {
+    margin-top: 15px;
+}
+.whatsapp-float:hover {
+    background-color: #20b954;
+    transform: scale(1.1);
+}
+
+
+        
     </style>
 </head>
 <body>
@@ -994,45 +1021,31 @@
     </section>
 
     <footer>
-        <div class="footer-content">
-            <div class="footer-column">
-                <h3>Cabana Odara</h3>
-                <p>Loja especializada em materiais para Umbanda e Candomblé, com produtos selecionados e respeito às tradições.</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-whatsapp"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-            <div class="footer-column">
-                <h3>Links Rápidos</h3>
-                <a href="#inicio">Início</a>
-                <a href="#categorias">Produtos</a>
-                <a href="#categorias">Categorias</a>
-                <a href="#sobre">Sobre Nós</a>
-                <a href="#contato">Contato</a>
-            </div>
-            <div class="footer-column">
-                <h3>Categorias</h3>
-                <a href="#velas">Velas</a>
-                <a href="#ervas">Ervas e Banhos</a>
-                <a href="#incensos">Incensos</a>
-                <a href="#colares">Colares e Guias</a>
-                <a href="#paramentas">Paramentas</a>
-                <a href="#buzios">Búzios e Conchas</a>
-            </div>
-            <div class="footer-column">
-                <h3>Contato</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Rua das Flores, 123 - Flores</p>
-                <p><i class="fas fa-phone"></i> (92) 99428-0161</p>
-                <p><i class="fas fa-envelope"></i> contato@cabanaodara.com</p>
+    <div class="footer-content">
+        <div class="footer-column">
+            <h3>Contato</h3>
+            <p>Email: <a href="mailto:cabanaodara@gmail.com">cabanaodara@gmail.com</a></p>
+            <p>Tel: <a class="whatsapp-link" href="https://wa.me/5592994280161" target="_blank">(92) 99428-0161</a></p>
+            <div class="social-links">
+                <!-- WhatsApp -->
+                <a href="https://wa.me/5592994280161" target="_blank" title="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/cabanaodara/" target="_blank" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <!-- Email -->
+                <a href="mailto:cabanaodara@gmail.com" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
             </div>
         </div>
-        <div class="copyright">
-            <p>© 2025 Cabana Odara - Kò sí ewé, kò sí Òrìṣà. Todos os direitos reservados.</p>
-        </div>
-    </footer>
+    </div>
+    <div class="copyright">
+        &copy; 2025 Cabana Odara - Todos os direitos reservados.
+    </div>
+</footer>
 
     <script>
         // Menu mobile
@@ -1070,9 +1083,16 @@
             observer.observe(el);
         });
     </script>
+
+    <!-- Botão flutuante WhatsApp -->
+<a href="https://wa.me/5592994280161" class="whatsapp-float" target="_blank" title="Fale conosco no WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
 </body>
 
 </html>
+
 
 
 
