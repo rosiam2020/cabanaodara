@@ -32,11 +32,6 @@
             box-sizing: border-box;
         }
 
-        /* REMOVIDO: scroll-behavior: smooth; */
-        html {
-            /* O scroll será controlado manualmente */
-        }
-
         body {
             font-family: 'Poppins', Arial, sans-serif;
             background: url('viveiro.jpg') center/cover fixed;
@@ -108,6 +103,7 @@
             max-width: 160px;
             max-height: 160px;
             border-radius: 50%;
+            object-fit: cover;
         }
 
         .logo-text {
@@ -223,6 +219,34 @@
             color: white;
             font-size: 1.5em;
             cursor: pointer;
+        }
+
+        /* Menu dropdown para categorias */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--primary);
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+            top: 100%;
+            left: 0;
+            border-radius: 0 0 5px 5px;
+            overflow: hidden;
+        }
+
+        .dropdown-content a {
+            padding: 12px 16px;
+            display: block;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
         }
 
         /* Hero Section */
@@ -380,6 +404,7 @@
             background-size: cover;
             background-position: center;
             transition: transform 0.5s ease;
+            background-color: #f5f5f5; /* Cor de fallback */
         }
 
         .category-card:hover .category-img {
@@ -437,6 +462,7 @@
             background-size: cover;
             background-position: center;
             transition: transform 0.5s ease;
+            background-color: #f5f5f5; /* Cor de fallback */
         }
 
         .tarot-card:hover .tarot-img {
@@ -510,6 +536,7 @@
             background-size: cover;
             background-position: center;
             transition: transform 0.5s ease;
+            background-color: #f5f5f5; /* Cor de fallback */
         }
 
         .product-card:hover .product-img {
@@ -563,6 +590,7 @@
             box-shadow: var(--shadow);
             position: relative;
             overflow: hidden;
+            background-color: #f5f5f5; /* Cor de fallback */
         }
 
         .about-image::before {
@@ -651,6 +679,30 @@
             color: #999;
         }
 
+        /* botão WhatsApp flutuante */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 2em;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+        .whatsapp-float i {
+            margin-top: 15px;
+        }
+        .whatsapp-float:hover {
+            background-color: #20b954;
+            transform: scale(1.1);
+        }
+
         /* Responsividade */
         @media (max-width: 992px) {
             .nav-menu {
@@ -670,6 +722,12 @@
 
             .mobile-menu {
                 display: block;
+            }
+
+            .dropdown-content {
+                position: static;
+                box-shadow: none;
+                background-color: rgba(0,0,0,0.1);
             }
         }
 
@@ -738,33 +796,6 @@
                 font-size: 1.2em;
             }
         }
-
-/* botão WhatsApp flutuante */
-.whatsapp-float {
-    position: fixed;
-    width: 60px;
-    height: 60px;
-    bottom: 20px;
-    right: 20px;
-    background-color: #25D366;
-    color: white;
-    border-radius: 50%;
-    text-align: center;
-    font-size: 2em;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-    z-index: 100;
-    transition: all 0.3s ease;
-}
-.whatsapp-float i {
-    margin-top: 15px;
-}
-.whatsapp-float:hover {
-    background-color: #20b954;
-    transform: scale(1.1);
-}
-
-
-        
     </style>
 </head>
 <body>
@@ -772,8 +803,7 @@
         <div class="header-content">
             <div class="logo-container">
                 <div class="logo-img">
-                    <!-- Mantendo sua logo original -->
-                    <img src="logo_oficial.png" alt="Cabana Odara">
+                    <img src="logo_oficial.png" alt="Cabana Odara - Loja de materiais para Umbanda e Candomblé">
                 </div>
                 <div class="logo-text">
                     <h1>Cabana Odara</h1>
@@ -789,29 +819,37 @@
                 <i class="fas fa-leaf"></i>
                 <span>Cabana Odara</span>
             </div>
-            <button class="mobile-menu" id="mobileMenu">
+            <button class="mobile-menu" id="mobileMenu" aria-label="Abrir menu">
                 <i class="fas fa-bars"></i>
             </button>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#inicio"><i class="fas fa-home"></i> Início</a></li>
-                <li><a href="#velas"><i class="fas fa-fire"></i> Velas</a></li>
-                <li><a href="#suplementos"><i class="fas fa-capsules"></i> Suplementos</a></li>
-                <li><a href="#tabacaria"><i class="fas fa-smoking"></i> Tabacaria</a></li>
-                <li><a href="#imagens"><i class="fas fa-image"></i> Imagens</a></li>
-                <li><a href="#incensos"><i class="fas fa-smog"></i> Incensos</a></li>
-                <li><a href="#ervas"><i class="fas fa-seedling"></i> Ervas</a></li>
-                <li><a href="#croche"><i class="fas fa-boxes"></i> Crochê</a></li>
-                <li><a href="#rituais"><i class="fas fa-star-of-david"></i> Rituais</a></li>
-                <li><a href="#utensilios"><i class="fas fa-utensils"></i> Utensílios</a></li>
-                <li><a href="#colares"><i class="fas fa-gem"></i> Colares</a></li>
-                <li><a href="#paramentas"><i class="fas fa-tshirt"></i> Paramentas</a></li>
-                <li><a href="#entidades"><i class="fas fa-crown"></i> Entidades</a></li>
-                <li><a href="#madeira"><i class="fas fa-tree"></i> Madeira</a></li>
-                <li><a href="#mercearia"><i class="fas fa-shopping-basket"></i> Mercearia</a></li>
-                <li><a href="#buzios"><i class="fas fa-shell"></i> Búzios</a></li>
-                <li><a href="#esotericos"><i class="fas fa-magic"></i> Esotéricos</a></li>
-                <li><a href="#perfumaria"><i class="fas fa-spray-can"></i> Perfumaria</a></li>
-                <li><a href="#loja"><i class="fas fa-book"></i> Loja Especializada</a></li>
+                <li class="dropdown">
+                    <a href="#categorias"><i class="fas fa-th-large"></i> Categorias <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#velas"><i class="fas fa-fire"></i> Velas</a>
+                        <a href="#suplementos"><i class="fas fa-capsules"></i> Suplementos</a>
+                        <a href="#tabacaria"><i class="fas fa-smoking"></i> Tabacaria</a>
+                        <a href="#imagens"><i class="fas fa-image"></i> Imagens</a>
+                        <a href="#incensos"><i class="fas fa-smog"></i> Incensos</a>
+                        <a href="#ervas"><i class="fas fa-seedling"></i> Ervas</a>
+                        <a href="#croche"><i class="fas fa-boxes"></i> Crochê</a>
+                        <a href="#rituais"><i class="fas fa-star-of-david"></i> Rituais</a>
+                        <a href="#utensilios"><i class="fas fa-utensils"></i> Utensílios</a>
+                        <a href="#colares"><i class="fas fa-gem"></i> Colares</a>
+                        <a href="#paramentas"><i class="fas fa-tshirt"></i> Paramentas</a>
+                        <a href="#entidades"><i class="fas fa-crown"></i> Entidades</a>
+                        <a href="#madeira"><i class="fas fa-tree"></i> Madeira</a>
+                        <a href="#mercearia"><i class="fas fa-shopping-basket"></i> Mercearia</a>
+                        <a href="#buzios"><i class="fas fa-shell"></i> Búzios</a>
+                        <a href="#esotericos"><i class="fas fa-magic"></i> Esotéricos</a>
+                        <a href="#perfumaria"><i class="fas fa-spray-can"></i> Perfumaria</a>
+                        <a href="#loja"><i class="fas fa-book"></i> Loja Especializada</a>
+                    </div>
+                </li>
+                <li><a href="#servicos"><i class="fas fa-hands"></i> Serviços</a></li>
+                <li><a href="#sobre"><i class="fas fa-info-circle"></i> Sobre</a></li>
+                <li><a href="#contato"><i class="fas fa-envelope"></i> Contato</a></li>
             </ul>
         </div>
     </nav>
@@ -925,7 +963,6 @@
                     <p>Alimentos e ingredientes para oferendas e assentamentos.</p>
                 </div>
             </div>
-            <!-- NOVA CATEGORIA ADICIONADA -->
             <div class="category-card" id="buzios">
                 <div class="category-img" style="background-image: url('buzios.jpeg')"></div>
                 <div class="category-content">
@@ -957,7 +994,7 @@
         </div>
     </section>
 
-    <section class="tarot-section">
+    <section class="tarot-section" id="servicos">
         <h2 class="section-title">Atendimento no Local</h2>
         <div class="tarot-card">
             <div class="tarot-img" style="background-image: url('baralho.png')"></div>
@@ -965,7 +1002,7 @@
                 <h3>Baralho Cigano</h3>
                 <p>Consulta personalizada com Baralho Cigano para orientação espiritual e insights sobre seu caminho. Agende seu horário e descubra as mensagens que o universo tem para você.</p>
                 <div class="tarot-price">R$ 100,00</div>
-                <a href="#" class="btn">Agendar Consulta</a>
+                <a href="https://wa.me/5592994280161?text=Olá! Gostaria de agendar uma consulta com Baralho Cigano." class="btn" target="_blank">Agendar Consulta</a>
             </div>
         </div>
     </section>
@@ -1008,7 +1045,7 @@
         </div>
     </section>
 
-    <section class="about">
+    <section class="about" id="sobre">
         <div class="about-content">
             <h2 class="section-title">Sobre Nós</h2>
             <p>A Cabana Odara é um espaço dedicado à preservação e disseminação das tradições afro-brasileiras. Ofornecemos materiais de qualidade para terreiros, casas de axé e praticantes das religiões de matriz africana.</p>
@@ -1016,36 +1053,47 @@
             <p>Trabalhamos com respeito às tradições e buscamos sempre oferecer produtos que atendam às necessidades ritualísticas dos nossos clientes, com a qualidade que merecem.</p>
             <a href="#" class="btn">Conheça Nossa História</a>
         </div>
-        <div class="product-img" style="background-image: url('iniciado.jpeg')"></div>
-
+        <div class="about-image"></div>
     </section>
 
-    <footer>
-    <div class="footer-content">
-        <div class="footer-column">
-            <h3>Contato</h3>
-            <p>Email: <a href="mailto:cabanaodara@gmail.com">cabanaodara@gmail.com</a></p>
-            <p>Tel: <a class="whatsapp-link" href="https://wa.me/5592994280161" target="_blank">(92) 99428-0161</a></p>
-            <div class="social-links">
-                <!-- WhatsApp -->
-                <a href="https://wa.me/5592994280161" target="_blank" title="WhatsApp">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-                <!-- Instagram -->
-                <a href="https://www.instagram.com/cabanaodara/" target="_blank" title="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <!-- Email -->
-                <a href="mailto:cabanaodara@gmail.com" title="Email">
-                    <i class="fas fa-envelope"></i>
-                </a>
+    <footer id="contato">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Contato</h3>
+                <p>Email: <a href="mailto:cabanaodara@gmail.com">cabanaodara@gmail.com</a></p>
+                <p>Tel: <a class="whatsapp-link" href="https://wa.me/5592994280161" target="_blank">(92) 99428-0161</a></p>
+                <div class="social-links">
+                    <!-- WhatsApp -->
+                    <a href="https://wa.me/5592994280161" target="_blank" title="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/cabanaodara/" target="_blank" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <!-- Email -->
+                    <a href="mailto:cabanaodara@gmail.com" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Horário de Funcionamento</h3>
+                <p>Segunda a Sexta: 9h às 18h</p>
+                <p>Sábado: 9h às 13h</p>
+                <p>Domingo: Fechado</p>
+            </div>
+            <div class="footer-column">
+                <h3>Localização</h3>
+                <p>Manaus - Amazonas</p>
+                <p>Atendemos toda região</p>
+                <p>Entregas por delivery</p>
             </div>
         </div>
-    </div>
-    <div class="copyright">
-        &copy; 2025 Cabana Odara - Todos os direitos reservados.
-    </div>
-</footer>
+        <div class="copyright">
+            &copy; 2025 Cabana Odara - Todos os direitos reservados.
+        </div>
+    </footer>
 
     <script>
         // Menu mobile
@@ -1082,17 +1130,28 @@
             el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
             observer.observe(el);
         });
+
+        // Prevenir comportamento padrão de links âncora
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId !== '#') {
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
     </script>
 
     <!-- Botão flutuante WhatsApp -->
-<a href="https://wa.me/5592994280161" class="whatsapp-float" target="_blank" title="Fale conosco no WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-</a>
-
+    <a href="https://wa.me/5592994280161" class="whatsapp-float" target="_blank" title="Fale conosco no WhatsApp" aria-label="Fale conosco no WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 </body>
-
 </html>
-
-
-
-
