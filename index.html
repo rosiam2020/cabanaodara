@@ -313,6 +313,90 @@
             }
         }
 
+        /* Categorias/Produtos */
+        .categories {
+            max-width: 1200px;
+            margin: 0 auto 50px;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--primary);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .category-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--accent), var(--purple));
+            z-index: 1;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .category-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.5s ease;
+            background-color: #f5f5f5;
+        }
+
+        .category-card:hover .category-img {
+            transform: scale(1.05);
+        }
+
+        .category-content {
+            padding: 20px;
+        }
+
+        .category-content h3 {
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .category-content p {
+            color: #666;
+            font-size: 0.95em;
+        }
+
         /* Card de Baralho Cigano */
         .tarot-section {
             max-width: 1200px;
@@ -350,7 +434,7 @@
             background-size: cover;
             background-position: center;
             transition: transform 0.5s ease;
-            background-color: #f5f5f5; /* Cor de fallback */
+            background-color: #f5f5f5;
         }
 
         .tarot-card:hover .tarot-img {
@@ -424,7 +508,7 @@
             background-size: cover;
             background-position: center;
             transition: transform 0.5s ease;
-            background-color: #f5f5f5; /* Cor de fallback */
+            background-color: #f5f5f5;
         }
 
         .product-card:hover .product-img {
@@ -478,7 +562,7 @@
             box-shadow: var(--shadow);
             position: relative;
             overflow: hidden;
-            background-color: #f5f5f5; /* Cor de fallback */
+            background-color: #f5f5f5;
         }
 
         .about-image::before {
@@ -718,7 +802,140 @@
         <div class="hero-content">
             <h2>Elementos Sagrados para Sua Jornada Espiritual</h2>
             <p>Encontre tudo o que precisa para rituais de Umbanda e Candomblé em um só lugar. Produtos de qualidade selecionados com respeito às tradições.</p>
-            <a href="#promocoes" class="btn">Ver Promoções</a>
+            <a href="#produtos" class="btn">Conheça Nossos Produtos</a>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE PRODUTOS/CATEGORIAS - MANTIDA COMPLETA -->
+    <section class="categories" id="produtos">
+        <h2 class="section-title">Nossos Produtos</h2>
+        <div class="categories-grid">
+            <div class="category-card">
+                <div class="category-img" style="background-image: url('esteira.jpeg')"></div>
+                <div class="category-content">
+                    <h3>Esteira de Palha R$ 60 </h3>
+                    <p>Medidas: 104 cm (comprimento) x 163 cm (altura).</p>
+                </div>
+            </div>
+            <div class="category-card">
+                <div class="category-img" style="background-image: url('palhadacosta.jpeg')"></div>
+                <div class="category-content">
+                    <h3>Palha Da Costa - R$ 80 </h3>
+                    <p>Palha Da Costa Nacional - 500g.</p>
+                </div>
+            </div>
+            <div class="category-card">
+                <div class="category-img" style="background-image: url('charutosarava.jpeg')"></div>
+                <div class="category-content">
+                    <h3>Charuto R$ 4 </h3>
+                    <p>Charuto Saravá - Produto destinado a maiores de 18 anos. </p>
+                </div>
+            </div>
+            <div class="category-card">
+                <div class="category-img" style="background-image: url('fumopretovelho.jpeg')"></div>
+                <div class="category-content">
+                    <h3>Fumo R$ 10 </h3>
+                    <p>Fumo para cachimbo tradicional - Produto destinado a maiores de 18 anos.</p>
+                </div>
+            </div>
+            <div class="category-card">
+                <div class="category-img" style="background-image: url('kitincenso.jpeg')"></div>
+                <div class="category-content">
+                    <h3>Incenso Indiano R$ 4 </h3>
+                    <p>Incenso Natural Massala Indiano 7 Varetas.</p>
+                </div>
+            </div>
+            <div class="category-card">
+                <div class="category-img" style="background-image: url('rungebe.jpeg')"></div>
+                <div class="category-content">
+                    <h3>Coral Hungebe  R$ 35 </h3>
+                    <p> Produto 100% Natural - 30 contas. </p>
+                </div>
+            </div>
+            <div class="category-card">
+                <div class="category-img" style="background-image: url('crocheverde.jpeg')"></div>
+                <div class="category-content">
+                    <h3>Crochê</h3>
+                    <p>Panos da Costa e de Cabeça em Crochê - Sob encomenda.</p>
+                </div>
+            </div>
+            <div class="category-card">
+                <div class="category-img" style="background-image: url('monjolo.jpeg')"></div>
+                <div class="category-content">
+                    <h3>Colar Monjolo - Coral R$ 40 </h3>
+                    <p> Fio Africano - Diversas Cores - Aproximadamente 12 corais.</p>
+                </div>
+            </div>
+            <div class="category-card">
+                <div class="category-img" style="background-image: url('kityawo.jpeg')"></div>
+                <div class="category-content">
+                    <h3>Kit Yawô R$ 50 </h3>
+                    <p>Abam branco+Dilonga decorada - Ágata Esmaltado .</p>
+                </div>
+            </div>
+            <div class="category-card">
+                <div class="category-img" style="background-image: url('colarambar.jpeg')"></div>
+                <div class="category-content">
+                    <h3>Colar De Pedra Âmbar Africana (50 unidades)- R$ 280 </h3>
+                    <p> O Âmbar é uma Pedra da Sorte, vitalidade e proteção.</p>
+                </div>
+            </div>
+            <div class="category-card">
+                <div class="category-img" style="background-image: url('lagdiba.jpeg')"></div>
+                <div class="category-content">
+                    <h3> Lagdibá Preto Médio R$ 90.</h3>
+                    <p>Colar Africano Preto Médio .</p>
+                </div>
+            </div>
+            <div class="category-card">
+                <div class="category-img" style="background-image: url('monjolo2.jpeg')"></div>
+                <div class="category-content">
+                    <h3>Ileke Africano Rústico R$ 40 </h3>
+                    <p>Fio Ileke Africano - Rústico na cor palha.</p>
+                </div>
+            </div>
+            <div class="category-card">
+                <div class="category-img" style="background-image: url('cachimbos.jpeg')"></div>
+                <div class="category-content">
+                    <h3>Cachimbos R$ 25 </h3>
+                    <p>Cachimbo artesanal em madeira - Lord Preto.</p>
+                </div>
+            </div>
+            <div class="category-card">
+                <div class="category-img" style="background-image: url('obi.jpeg')"></div>
+                <div class="category-content">
+                    <h3>Obi Branco Nacional R$ 3 </h3>
+                    <p>Obi Nacional 2 Gomos.</p>
+                </div>
+            </div>
+            <div class="category-card">
+                <div class="category-img" style="background-image: url('pimentadacosta.jpeg')"></div>
+                <div class="category-content">
+                    <h3>Pimenta da Costa R$ 2 </h3>
+                    <p>Pimenta da costa importada africana em cápsula.</p>
+                </div>
+            </div>
+            <div class="category-card">
+                <div class="category-img" style="background-image: url('six3.jpeg')"></div>
+                <div class="category-content">
+                    <h3>Six Flowers - Perfume Afrodisíaco R$ 45 </h3>
+                    <p>Perfume afrodisíaco importado da Nigéria para prosperidade. </p>
+                </div>
+            </div>
+            <div class="category-card">
+                <div class="category-img" style="background-image: url('dan2.jpeg')"></div>
+                <div class="category-content">
+                    <h3> Dan Duala - Perfume Afrodisíaco R$ 60 </h3>
+                    <p>Altamente afrodisíaco, atrativo, usado em rituais para amor e sensualidade.</p>
+                </div>
+            </div>
+            <div class="category-card">
+                <div class="category-img" style="background-image: url('segui.jpeg')"></div>
+                <div class="category-content">
+                    <h3> Segui Africano- R$ 30 </h3>
+                    <p> Fio Miçangas Mini Firmas Cores diversas.</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -794,15 +1011,12 @@
                 <p>Email: <a href="mailto:cabanaodara@gmail.com">cabanaodara@gmail.com</a></p>
                 <p>Tel: <a class="whatsapp-link" href="https://wa.me/5592994280161" target="_blank">(92) 99428-0161</a></p>
                 <div class="social-links">
-                    <!-- WhatsApp -->
                     <a href="https://wa.me/5592994280161" target="_blank" title="WhatsApp">
                         <i class="fab fa-whatsapp"></i>
                     </a>
-                    <!-- Instagram -->
                     <a href="https://www.instagram.com/cabanaodara/" target="_blank" title="Instagram">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <!-- Email -->
                     <a href="mailto:cabanaodara@gmail.com" title="Email">
                         <i class="fas fa-envelope"></i>
                     </a>
@@ -832,14 +1046,14 @@
             document.getElementById('navMenu').classList.toggle('active');
         });
 
-        // Fechar menu ao clicar em um link (em dispositivos móveis)
+        // Fechar menu ao clicar em um link
         document.querySelectorAll('.nav-menu a').forEach(link => {
             link.addEventListener('click', function() {
                 document.getElementById('navMenu').classList.remove('active');
             });
         });
 
-        // Animação de entrada para elementos quando aparecem na tela
+        // Animação de entrada para elementos
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -855,14 +1069,14 @@
         }, observerOptions);
 
         // Observar elementos para animação
-        document.querySelectorAll('.product-card, .tarot-card').forEach(el => {
+        document.querySelectorAll('.category-card, .product-card, .tarot-card').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
             observer.observe(el);
         });
 
-        // Prevenir comportamento padrão de links âncora
+        // Scroll suave para links âncora
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -880,8 +1094,7 @@
         });
     </script>
 
-    <!-- Botão flutuante WhatsApp -->
-    <a href="https://wa.me/5592994280161" class="whatsapp-float" target="_blank" title="Fale conosco no WhatsApp" aria-label="Fale conosco no WhatsApp">
+    <a href="https://wa.me/5592994280161" class="whatsapp-float" target="_blank" title="Fale conosco no WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 </body>
