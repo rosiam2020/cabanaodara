@@ -221,34 +221,6 @@
             cursor: pointer;
         }
 
-        /* Menu dropdown para categorias */
-        .dropdown {
-            position: relative;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: var(--primary);
-            min-width: 200px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-            z-index: 1;
-            top: 100%;
-            left: 0;
-            border-radius: 0 0 5px 5px;
-            overflow: hidden;
-        }
-
-        .dropdown-content a {
-            padding: 12px 16px;
-            display: block;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
         /* Hero Section */
         .hero {
             background: linear-gradient(rgba(26, 71, 42, 0.8), rgba(46, 139, 87, 0.8)), url('tema.png');
@@ -339,90 +311,6 @@
                 opacity: 1;
                 transform: translateY(0);
             }
-        }
-
-        /* Categorias */
-        .categories {
-            max-width: 1200px;
-            margin: 0 auto 50px;
-            padding: 0 20px;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-            color: var(--primary);
-            position: relative;
-            padding-bottom: 15px;
-        }
-
-        .section-title::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: var(--accent);
-        }
-
-        .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .category-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-            cursor: pointer;
-            position: relative;
-        }
-
-        .category-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(to right, var(--accent), var(--purple));
-            z-index: 1;
-        }
-
-        .category-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .category-img {
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-            transition: transform 0.5s ease;
-            background-color: #f5f5f5; /* Cor de fallback */
-        }
-
-        .category-card:hover .category-img {
-            transform: scale(1.05);
-        }
-
-        .category-content {
-            padding: 20px;
-        }
-
-        .category-content h3 {
-            margin-bottom: 10px;
-            color: var(--primary);
-        }
-
-        .category-content p {
-            color: #666;
-            font-size: 0.95em;
         }
 
         /* Card de Baralho Cigano */
@@ -723,12 +611,6 @@
             .mobile-menu {
                 display: block;
             }
-
-            .dropdown-content {
-                position: static;
-                box-shadow: none;
-                background-color: rgba(0,0,0,0.1);
-            }
         }
 
         @media (max-width: 768px) {
@@ -824,30 +706,8 @@
             </button>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#inicio"><i class="fas fa-home"></i> Início</a></li>
-                <li class="dropdown">
-                    <a href="#categorias"><i class="fas fa-th-large"></i> Categorias <i class="fas fa-chevron-down"></i></a>
-                    <div class="dropdown-content">
-                        <a href="#velas"><i class="fas fa-fire"></i> Velas</a>
-                        <a href="#suplementos"><i class="fas fa-capsules"></i> Suplementos</a>
-                        <a href="#tabacaria"><i class="fas fa-smoking"></i> Tabacaria</a>
-                        <a href="#imagens"><i class="fas fa-image"></i> Imagens</a>
-                        <a href="#incensos"><i class="fas fa-smog"></i> Incensos</a>
-                        <a href="#ervas"><i class="fas fa-seedling"></i> Ervas</a>
-                        <a href="#croche"><i class="fas fa-boxes"></i> Crochê</a>
-                        <a href="#rituais"><i class="fas fa-star-of-david"></i> Rituais</a>
-                        <a href="#utensilios"><i class="fas fa-utensils"></i> Utensílios</a>
-                        <a href="#colares"><i class="fas fa-gem"></i> Colares</a>
-                        <a href="#paramentas"><i class="fas fa-tshirt"></i> Paramentas</a>
-                        <a href="#entidades"><i class="fas fa-crown"></i> Entidades</a>
-                        <a href="#madeira"><i class="fas fa-tree"></i> Madeira</a>
-                        <a href="#mercearia"><i class="fas fa-shopping-basket"></i> Mercearia</a>
-                        <a href="#buzios"><i class="fas fa-shell"></i> Búzios</a>
-                        <a href="#esotericos"><i class="fas fa-magic"></i> Esotéricos</a>
-                        <a href="#perfumaria"><i class="fas fa-spray-can"></i> Perfumaria</a>
-                        <a href="#loja"><i class="fas fa-book"></i> Loja Especializada</a>
-                    </div>
-                </li>
                 <li><a href="#servicos"><i class="fas fa-hands"></i> Serviços</a></li>
+                <li><a href="#promocoes"><i class="fas fa-tag"></i> Promoções</a></li>
                 <li><a href="#sobre"><i class="fas fa-info-circle"></i> Sobre</a></li>
                 <li><a href="#contato"><i class="fas fa-envelope"></i> Contato</a></li>
             </ul>
@@ -858,139 +718,7 @@
         <div class="hero-content">
             <h2>Elementos Sagrados para Sua Jornada Espiritual</h2>
             <p>Encontre tudo o que precisa para rituais de Umbanda e Candomblé em um só lugar. Produtos de qualidade selecionados com respeito às tradições.</p>
-            <a href="#categorias" class="btn">Explorar Produtos</a>
-        </div>
-    </section>
-
-    <section class="categories" id="categorias">
-        <h2 class="section-title">Nossas Categorias</h2>
-        <div class="categories-grid">
-            <div class="category-card" id="velas">
-                <div class="category-img" style="background-image: url('esteira.jpeg')"></div>
-                <div class="category-content">
-                    <h3>Esteira de Palha R$ 60 </h3>
-                    <p>Medidas: 104 cm (comprimento) x 163 cm (altura).</p>
-                </div>
-            </div>
-            <div class="category-card" id="suplementos">
-                <div class="category-img" style="background-image: url('palhadacosta.jpeg')"></div>
-                <div class="category-content">
-                    <h3>Palha Da Costa - R$ 80 </h3>
-                    <p>Palha Da Costa Nacional - 500g.</p>
-                </div>
-            </div>
-            <div class="category-card" id="tabacaria">
-                <div class="category-img" style="background-image: url('charutosarava.jpeg')"></div>
-                <div class="category-content">
-                    <h3>Charuto R$ 4 </h3>
-                    <p>Charuto Saravá - Produto destinado a maiores de 18 anos. </p>
-                </div>
-            </div>
-            <div class="category-card" id="imagens">
-                <div class="category-img" style="background-image: url('fumopretovelho.jpeg')"></div>
-                <div class="category-content">
-                    <h3>Fumo R$ 10 </h3>
-                    <p>Fumo para cachimbo tradicional - Produto destinado a maiores de 18 anos.</p>
-                </div>
-            </div>
-            <div class="category-card" id="incensos">
-                <div class="category-img" style="background-image: url('kitincenso.jpeg')"></div>
-                <div class="category-content">
-                    <h3>Incenso Indiano R$ 4 </h3>
-                    <p>Incenso Natural Massala Indiano 7 Varetas.</p>
-                </div>
-            </div>
-            <div class="category-card" id="ervas">
-                <div class="category-img" style="background-image: url('rungebe.jpeg')"></div>
-                <div class="category-content">
-                    <h3>Coral Hungebe  R$ 35 </h3>
-                    <p> Produto 100% Natural - 30 contas. </p>
-                </div>
-            </div>
-            <div class="category-card" id="croche">
-                <div class="category-img" style="background-image: url('crocheverde.jpeg')"></div>
-                <div class="category-content">
-                    <h3>Crochê</h3>
-                    <p>Panos da Costa e de Cabeça em Crochê - Sob encomenda.</p>
-                </div>
-            </div>
-            <div class="category-card" id="rituais">
-                <div class="category-img" style="background-image: url('monjolo.jpeg')"></div>
-                <div class="category-content">
-                    <h3>Colar Monjolo - Coral R$ 40 </h3>
-                    <p> Fio Africano - Diversas Cores - Aproximadamente 12 corais.</p>
-                </div>
-            </div>
-            <div class="category-card" id="utensilios">
-                <div class="category-img" style="background-image: url('kityawo.jpeg')"></div>
-                <div class="category-content">
-                    <h3>Kit Yawô R$ 50 </h3>
-                    <p>Abam branco+Dilonga decorada - Ágata Esmaltado .</p>
-                </div>
-            </div>
-            <div class="category-card" id="colares">
-                <div class="category-img" style="background-image: url('colarambar.jpeg')"></div>
-                <div class="category-content">
-                    <h3>Colar De Pedra Âmbar Africana (50 unidades)- R$ 280 </h3>
-                    <p> O Âmbar é uma Pedra da Sorte, vitalidade e proteção.</p>
-                </div>
-            </div>
-            <div class="category-card" id="paramentas">
-                <div class="category-img" style="background-image: url('lagdiba.jpeg')"></div>
-                <div class="category-content">
-                    <h3> Lagdibá Preto Médio R$ 90.</h3>
-                    <p>Colar Africano Preto Médio .</p>
-                </div>
-            </div>
-            <div class="category-card" id="entidades">
-                <div class="category-img" style="background-image: url('monjolo2.jpeg')"></div>
-                <div class="category-content">
-                    <h3>Ileke Africano Rústico R$ 40 </h3>
-                    <p>Fio Ileke Africano - Rústico na cor palha.</p>
-                </div>
-            </div>
-            <div class="category-card" id="madeira">
-                <div class="category-img" style="background-image: url('cachimbos.jpeg')"></div>
-                <div class="category-content">
-                    <h3>Cachimbos R$ 25 </h3>
-                    <p>Cachimbo artesanal em madeira - Lord Preto.</p>
-                </div>
-            </div>
-            <div class="category-card" id="mercearia">
-                <div class="category-img" style="background-image: url('obi.jpeg')"></div>
-                <div class="category-content">
-                    <h3>Obi Branco Nacional R$ 3 </h3>
-                    <p>Obi Nacional 2 Gomos.</p>
-                </div>
-            </div>
-            <div class="category-card" id="buzios">
-                <div class="category-img" style="background-image: url('pimentadacosta.jpeg')"></div>
-                <div class="category-content">
-                    <h3>Pimenta da Costa R$ 2 </h3>
-                    <p>Pimenta da costa importada africana em cápsula.</p>
-                </div>
-            </div>
-            <div class="category-card" id="esotericos">
-                <div class="category-img" style="background-image: url('six3.jpeg')"></div>
-                <div class="category-content">
-                    <h3>Six Flowers - Perfume AfrodisíacoR$ 45 </h3>
-                    <p>Perfume afrodisíaco importado da Nigéria para prosperidade. </p>
-                </div>
-            </div>
-            <div class="category-card" id="perfumaria">
-                <div class="category-img" style="background-image: url('dan2.jpeg')"></div>
-                <div class="category-content">
-                    <h3> Dan Duala - Perfume Afrodisíaco R$ 60 </h3>
-                    <p>Altamente afrodisíaco, atrativo, usado em rituais para amor e sensualidade.</p>
-                </div>
-            </div>
-            <div class="category-card" id="loja">
-                <div class="category-img" style="background-image: url('segui.jpeg')"></div>
-                <div class="category-content">
-                    <h3> Segui Africano- R$ 30 </h3>
-                    <p> Fio Miçangas Mini Firmas Cores diversas.</p>
-                </div>
-            </div>
+            <a href="#promocoes" class="btn">Ver Promoções</a>
         </div>
     </section>
 
@@ -1007,50 +735,51 @@
         </div>
     </section>
 
-    <section class="featured-products">
-    <h2 class="section-title" style="color: red;"> ****** Promoção de Inauguração ****** </h2>
-    <div class="products-grid">
-        <div class="product-card">
-            <div class="product-img" style="background-image: url('racao_certa.jpeg')"></div>
-            <div class="product-content">
-                <h3> Branco nosso de cada dia 3 Peças </h3>
-                <p> Conjunto de Ração branco em microfibra (Saia + Ojá + Pano da Costa).</p>
-                <div class="price"> R$ 150,00 </div>
+    <section class="featured-products" id="promocoes">
+        <h2 class="section-title" style="color: red;"> ****** Promoção de Inauguração ****** </h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('racao_certa.jpeg')"></div>
+                <div class="product-content">
+                    <h3> Branco nosso de cada dia 3 Peças </h3>
+                    <p> Conjunto de Ração branco em microfibra (Saia + Ojá + Pano da Costa).</p>
+                    <div class="price"> R$ 150,00 </div>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('saiapv.jpeg')"></div>
+                <div class="product-content">
+                    <h3> Saia Carijó </h3>
+                    <p> Saia para Preta Velha.</p>
+                    <div class="price"> R$ 140 </div>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('camisumicrofibra.jpeg')"></div>
+                <div class="product-content">
+                    <h3>Camisú Branco</h3>
+                    <p> Microfibra </p>
+                    <div class="price"> R$ 50 </div>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('jogo2.jpeg')"></div>
+                <div class="product-content">
+                    <h3>Jogo Branco semi Luxo 2 peças</h3>
+                    <p> Ojá + Pano da Costa - Bordados.</p> 
+                    <div class="price"> R$ 150 </div>
+                </div>
             </div>
         </div>
-        
-        <div class="product-card">
-            <div class="product-img" style="background-image: url('saiapv.jpeg')"></div>
-            <div class="product-content">
-                <h3> Saia Carijó </h3>
-                <p> Saia para Preta Velha.</p>
-                <div class="price"> R$ 140 </div>
-            </div>
-        </div>
-        
-        <div class="product-card">
-            <div class="product-img" style="background-image: url('camisumicrofibra.jpeg')"></div>
-            <div class="product-content">
-                <h3>Camisú Branco</h3>
-                <p> Microfibra </p>
-                <div class="price"> R$ 50 </div>
-            </div>
-        </div>
-        
-        <div class="product-card">
-            <div class="product-img" style="background-image: url('jogo2.jpeg')"></div>
-            <div class="product-content">
-                <h3>Jogo Branco semi Luxo 2 peças</h3>
-                <p> Ojá + Pano da Costa - Bordados.</p> 
-                <div class="price"> R$ 150 </div>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
+    
     <section class="about" id="sobre">
         <div class="about-content">
             <h2 class="section-title">Sobre Nós</h2>
-            <p>A Cabana Odara é um espaço dedicado à preservação e disseminação das tradições afro-brasileiras. Ofornecemos materiais de qualidade para terreiros, casas de axé e praticantes das religiões de matriz africana.</p>
+            <p>A Cabana Odara é um espaço dedicado à preservação e disseminação das tradições afro-brasileiras. Oferecemos materiais de qualidade para terreiros, casas de axé e praticantes das religiões de matriz africana.</p>
             <p>Nosso tema "Kò sí ewé, kò sí Òrìṣà" reflete a importância fundamental das ervas nos cultos aos Orixás, como diz o provérbio yorubá: "Sem folhas, não há Orixá".</p>
             <p>Trabalhamos com respeito às tradições e buscamos sempre oferecer produtos que atendam às necessidades ritualísticas dos nossos clientes, com a qualidade que merecem.</p>
             <a href="#" class="btn">Conheça Nossa História</a>
@@ -1126,7 +855,7 @@
         }, observerOptions);
 
         // Observar elementos para animação
-        document.querySelectorAll('.category-card, .product-card, .tarot-card').forEach(el => {
+        document.querySelectorAll('.product-card, .tarot-card').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
@@ -1157,40 +886,3 @@
     </a>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
