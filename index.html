@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <meta name="description" content="Cabana Odara - Kò sí ewé, kò sí Òrìṣà - Loja completa de materiais para Umbanda e Candomblé">
     <title>Cabana Odara - Kò sí ewé, kò sí Òrìṣà</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -377,6 +377,7 @@
             background-position: center;
             transition: transform 0.5s ease;
             background-color: #f5f5f5;
+            cursor: pointer;
         }
 
         .category-card:hover .category-img {
@@ -435,6 +436,7 @@
             background-position: center;
             transition: transform 0.5s ease;
             background-color: #f5f5f5;
+            cursor: pointer;
         }
 
         .tarot-card:hover .tarot-img {
@@ -509,6 +511,7 @@
             background-position: center;
             transition: transform 0.5s ease;
             background-color: #f5f5f5;
+            cursor: pointer;
         }
 
         .product-card:hover .product-img {
@@ -675,6 +678,233 @@
             transform: scale(1.1);
         }
 
+        /* Lightbox - Sistema de visualização de imagens otimizado para celular */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            backdrop-filter: blur(5px);
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .lightbox-image-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            touch-action: none; /* Previne rolagem da página enquanto faz zoom */
+        }
+
+        .lightbox-image-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.1s ease;
+            cursor: grab;
+            user-select: none;
+            -webkit-user-select: none;
+            -webkit-touch-callout: none;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+            border-radius: 4px;
+        }
+
+        .lightbox-image-container img:active {
+            cursor: grabbing;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.8em;
+            cursor: pointer;
+            z-index: 2100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .lightbox-close:hover {
+            background-color: var(--accent-dark);
+            transform: scale(1.1);
+        }
+
+        .lightbox-close:active {
+            transform: scale(0.95);
+        }
+
+        .lightbox-counter {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(255, 255, 255, 0.9);
+            color: var(--dark);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 0.9em;
+            font-weight: 600;
+            z-index: 2100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            font-size: 1.5em;
+            cursor: pointer;
+            z-index: 2100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .lightbox-nav:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            border-color: white;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .lightbox-nav:active {
+            transform: translateY(-50%) scale(0.95);
+        }
+
+        .lightbox-nav.prev {
+            left: 20px;
+        }
+
+        .lightbox-nav.next {
+            right: 20px;
+        }
+
+        .lightbox-nav i {
+            pointer-events: none;
+        }
+
+        .lightbox-zoom-controls {
+            position: absolute;
+            bottom: 80px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 2100;
+        }
+
+        .lightbox-zoom-btn {
+            width: 50px;
+            height: 50px;
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.3em;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .lightbox-zoom-btn:hover {
+            background-color: var(--accent-dark);
+            transform: scale(1.1);
+        }
+
+        .lightbox-zoom-btn:active {
+            transform: scale(0.95);
+        }
+
+        @media (max-width: 768px) {
+            .lightbox-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2em;
+            }
+            
+            .lightbox-close {
+                top: 10px;
+                right: 10px;
+                width: 40px;
+                height: 40px;
+                font-size: 1.5em;
+            }
+            
+            .lightbox-zoom-controls {
+                bottom: 70px;
+                right: 10px;
+            }
+            
+            .lightbox-zoom-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1.1em;
+            }
+            
+            .lightbox-counter {
+                bottom: 15px;
+                padding: 6px 12px;
+                font-size: 0.8em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .lightbox-nav {
+                width: 35px;
+                height: 35px;
+                font-size: 1em;
+            }
+            
+            .lightbox-nav.prev {
+                left: 10px;
+            }
+            
+            .lightbox-nav.next {
+                right: 10px;
+            }
+        }
+
         /* Responsividade */
         @media (max-width: 992px) {
             .nav-menu {
@@ -811,147 +1041,147 @@
         <h2 class="section-title">Nossos Produtos</h2>
         <div class="categories-grid">
             <div class="category-card">
-                <div class="category-img" style="background-image: url('esteira.jpeg')"></div>
+                <div class="category-img" style="background-image: url('esteira.jpeg')" onclick="openLightbox(0)"></div>
                 <div class="category-content">
                     <h3>Esteira de Palha R$ 60 </h3>
                     <p>Medidas: 104cmx163 cm.</p>
                 </div>
             </div>
             <div class="category-card">
-                <div class="category-img" style="background-image: url('palhadacosta.jpeg')"></div>
+                <div class="category-img" style="background-image: url('palhadacosta.jpeg')" onclick="openLightbox(1)"></div>
                 <div class="category-content">
                     <h3>Palha Da Costa - R$ 170 </h3>
                     <p>Palha Da Costa Nacional - 1kg.</p>
                 </div>
             </div>
             <div class="category-card">
-                <div class="category-img" style="background-image: url('charutosarava.jpeg')"></div>
+                <div class="category-img" style="background-image: url('charutosarava.jpeg')" onclick="openLightbox(2)"></div>
                 <div class="category-content">
                     <h3>Charuto R$ 4 </h3>
                     <p>Charuto Saravá (+18). </p>
                 </div>
             </div>
             <div class="category-card">
-                <div class="category-img" style="background-image: url('novofumo.jpeg')"></div>
+                <div class="category-img" style="background-image: url('novofumo.jpeg')" onclick="openLightbox(3)"></div>
                 <div class="category-content">
                     <h3>Fumo R$ 30 </h3>
                     <p>Mistura Especial para pretos Velhos  (+18).</p>
                 </div>
             </div>
             <div class="category-card">
-                <div class="category-img" style="background-image: url('kitincenso.jpeg')"></div>
+                <div class="category-img" style="background-image: url('kitincenso.jpeg')" onclick="openLightbox(4)"></div>
                 <div class="category-content">
                     <h3>Incenso Indiano R$ 3 </h3>
                     <p>Incenso Natural Massala Indiano 7 Varetas.</p>
                 </div>
             </div>
             <div class="category-card">
-                <div class="category-img" style="background-image: url('novohungebe.jpeg')"></div>
+                <div class="category-img" style="background-image: url('novohungebe.jpeg')" onclick="openLightbox(5)"></div>
                 <div class="category-content">
                     <h3>Coral Hungebe  R$ 35 </h3>
                     <p> Produto 100% Natural - 30 contas. </p>
                 </div>
             </div>
             <div class="category-card">
-                <div class="category-img" style="background-image: url('crocheverde.jpeg')"></div>
+                <div class="category-img" style="background-image: url('crocheverde.jpeg')" onclick="openLightbox(6)"></div>
                 <div class="category-content">
                     <h3>Crochê</h3>
                     <p> Sob encomenda.</p>
                 </div>
             </div>
             <div class="category-card">
-                <div class="category-img" style="background-image: url('novocoral.jpeg')"></div>
+                <div class="category-img" style="background-image: url('novocoral.jpeg')" onclick="openLightbox(7)"></div>
                 <div class="category-content">
                     <h3>Colar Monjolo - Coral R$ 40 </h3>
                     <p> Fio Africano - Diversas Cores. </p>
                 </div>
             </div>
             <div class="category-card">
-                <div class="category-img" style="background-image: url('kityawo.jpeg')"></div>
+                <div class="category-img" style="background-image: url('kityawo.jpeg')" onclick="openLightbox(8)"></div>
                 <div class="category-content">
                     <h3> Kit Yawô (Ágata) R$ 50 </h3>
                     <p> Abam branco + Dilonga decorada. </p>
                 </div>
             </div>
             <div class="category-card">
-                <div class="category-img" style="background-image: url('kitpvelho.jpeg')"></div>
+                <div class="category-img" style="background-image: url('kitpvelho.jpeg')" onclick="openLightbox(9)"></div>
                 <div class="category-content">
                     <h3> Fumo Especial + Cachimbo (P) - R$ 45 </h3>
                     <p> Fumo Especial para Pretos Velhos.</p>
                 </div>
             </div>
             <div class="category-card">
-                <div class="category-img" style="background-image: url('lagdiba.jpeg')"></div>
+                <div class="category-img" style="background-image: url('lagdiba.jpeg')" onclick="openLightbox(10)"></div>
                 <div class="category-content">
                     <h3> Lagdibá Preto Médio R$ 90.</h3>
                     <p>Colar Africano Preto Médio .</p>
                 </div>
             </div>
             <div class="category-card">
-                <div class="category-img" style="background-image: url('monjolo2.jpeg')"></div>
+                <div class="category-img" style="background-image: url('monjolo2.jpeg')" onclick="openLightbox(11)"></div>
                 <div class="category-content">
                     <h3>Ileke Africano Rústico R$ 40 </h3>
                     <p>Fio Ileke Africano - Rústico na cor palha.</p>
                 </div>
             </div>
             <div class="category-card">
-                <div class="category-img" style="background-image: url('cachimb.jpeg')"></div>
+                <div class="category-img" style="background-image: url('cachimb.jpeg')" onclick="openLightbox(12)"></div>
                 <div class="category-content">
                     <h3>Cachimbos Diversos </h3>
                     <p>Angico (R$40); Madeira Preto P (R$18). </p>
                 </div>
             </div>
             <div class="category-card">
-                <div class="category-img" style="background-image: url('obi.jpeg')"></div>
+                <div class="category-img" style="background-image: url('obi.jpeg')" onclick="openLightbox(13)"></div>
                 <div class="category-content">
                     <h3>Obi Branco Nacional R$ 3 </h3>
                     <p>Obi Nacional 2 Gomos.</p>
                 </div>
             </div>
             <div class="category-card">
-                <div class="category-img" style="background-image: url('fava.jpg')"></div>
+                <div class="category-img" style="background-image: url('fava.jpg')" onclick="openLightbox(14)"></div>
                 <div class="category-content">
                     <h3>Favas Tradicionais Africanas </h3>
                     <p> Aridan, Bejerecum, Ataré...</p>
-                   </div>
+                </div>
             </div>
             <div class="category-card">
-                <div class="category-img" style="background-image: url('six3.jpeg')"></div>
+                <div class="category-img" style="background-image: url('six3.jpeg')" onclick="openLightbox(15)"></div>
                 <div class="category-content">
                     <h3>Six Flowers - R$ 45 </h3>
                     <p>Perfume afrodisíaco da Nigéria. </p>
                 </div>
             </div>
             <div class="category-card">
-                <div class="category-img" style="background-image: url('dan2.jpeg')"></div>
+                <div class="category-img" style="background-image: url('dan2.jpeg')" onclick="openLightbox(16)"></div>
                 <div class="category-content">
                     <h3> Dan Duala -  R$ 65 </h3>
                     <p>Afrodisíaco e atrativo.</p>
                 </div>
             </div>
             <div class="category-card">
-                <div class="category-img" style="background-image: url('punhal.jpeg')"></div>
+                <div class="category-img" style="background-image: url('punhal.jpeg')" onclick="openLightbox(17)"></div>
                 <div class="category-content">
                     <h3> Punhal - R$ 7 </h3>
                     <p> 15 cm na cor preto e vermelho.</p>
                 </div>
             </div>
             <div class="category-card">
-                <div class="category-img" style="background-image: url('poouro.jpeg')"></div>
+                <div class="category-img" style="background-image: url('poouro.jpeg')" onclick="openLightbox(18)"></div>
                 <div class="category-content">
                     <h3> Pó de Ouro - R$ 9 </h3>
                     <p> Pó fino, dourado e brilhante .</p>
                 </div>
             </div>
             <div class="category-card">
-                <div class="category-img" style="background-image: url('cascalhotigre.jpeg')"></div>
+                <div class="category-img" style="background-image: url('cascalhotigre.jpeg')" onclick="openLightbox(19)"></div>
                 <div class="category-content">
                     <h3> Cascalho Olho de Tigre - R$ 40 </h3>
                     <p> Fio de Pedra Natural 200 contas .</p>
                 </div>
             </div>
             <div class="category-card">
-                <div class="category-img" style="background-image: url('novosegui.jpeg')"></div>
+                <div class="category-img" style="background-image: url('novosegui.jpeg')" onclick="openLightbox(20)"></div>
                 <div class="category-content">
                     <h3> Segui Africano- R$ 30 </h3>
                     <p> Fio com mini firmas - Cores diversas.</p>
@@ -960,37 +1190,38 @@
         </div>
     </section>
 
-   <section class="tarot-section" id="servicos">
-    <div style="background: #ff0000; color: white; padding: 15px; text-align: center; font-size: 1.8rem; font-weight: bold; border-radius: 50px; margin-bottom: 25px; width: 100%;">
-        🔥 PROMOÇÃO DE INAUGURAÇÃO 🔥
-    </div>
-    
-    <h2 class="section-title">Oráculo do Povo Cigano</h2>
-    
-    <div class="tarot-card">
-        <div class="tarot-img" style="background-image: url('baralho.png')"></div>
-        <div class="tarot-content">
-            <h3>Baralho Cigano</h3>
-            <p>Consulta personalizada com Baralho Cigano para orientação espiritual e insights sobre seu caminho. Agende seu horário e descubra as mensagens que o universo tem para você.</p>
-            
-            <div class="tarot-price">
-                <s style="color: #999; font-size: 1.2rem; margin-right: 15px;">R$ 100,00</s> 
-                <strong style="color: #28a745; font-size: 1.8rem;">R$ 70,00</strong>
-            </div>
-            
-            <p style="color: #ff4757; font-weight: 600; margin: 10px 0; font-size: 1.1rem;">
-                Promoção válida para Fevereiro
-            </p>
-            
-            <a href="https://wa.me/5592994280161?text=Olá! Gostaria de agendar uma consulta com Baralho Cigano - Promoção de inauguração." class="btn" target="_blank">Agendar Consulta</a>
+    <section class="tarot-section" id="servicos">
+        <div style="background: #ff0000; color: white; padding: 15px; text-align: center; font-size: 1.8rem; font-weight: bold; border-radius: 50px; margin-bottom: 25px; width: 100%;">
+            🔥 PROMOÇÃO DE INAUGURAÇÃO 🔥
         </div>
-    </div>
-</section>
+        
+        <h2 class="section-title">Oráculo do Povo Cigano</h2>
+        
+        <div class="tarot-card">
+            <div class="tarot-img" style="background-image: url('baralho.png')" onclick="openLightbox(21)"></div>
+            <div class="tarot-content">
+                <h3>Baralho Cigano</h3>
+                <p>Consulta personalizada com Baralho Cigano para orientação espiritual e insights sobre seu caminho. Agende seu horário e descubra as mensagens que o universo tem para você.</p>
+                
+                <div class="tarot-price">
+                    <s style="color: #999; font-size: 1.2rem; margin-right: 15px;">R$ 100,00</s> 
+                    <strong style="color: #28a745; font-size: 1.8rem;">R$ 70,00</strong>
+                </div>
+                
+                <p style="color: #ff4757; font-weight: 600; margin: 10px 0; font-size: 1.1rem;">
+                    Promoção válida para Fevereiro
+                </p>
+                
+                <a href="https://wa.me/5592994280161?text=Olá! Gostaria de agendar uma consulta com Baralho Cigano - Promoção de inauguração." class="btn" target="_blank">Agendar Consulta</a>
+            </div>
+        </div>
+    </section>
+
     <section class="featured-products" id="promocoes">
         <h2 class="section-title" style="color: red;"> * Promoção válida enquanto durar o estoque * </h2>
         <div class="products-grid">
             <div class="product-card">
-                <div class="product-img" style="background-image: url('racao_certa.jpeg')"></div>
+                <div class="product-img" style="background-image: url('racao_certa.jpeg')" onclick="openLightbox(22)"></div>
                 <div class="product-content">
                     <h3> Branco nosso de cada dia</h3>
                     <p> Ração em microfibra (Saia, Ojá e Pano da Costa).</p>
@@ -999,7 +1230,7 @@
             </div>
             
             <div class="product-card">
-                <div class="product-img" style="background-image: url('saiapv.jpeg')"></div>
+                <div class="product-img" style="background-image: url('saiapv.jpeg')" onclick="openLightbox(23)"></div>
                 <div class="product-content">
                     <h3> Saia Carijó </h3>
                     <p> Saia para Preta Velha.</p>
@@ -1008,7 +1239,7 @@
             </div>
             
             <div class="product-card">
-                <div class="product-img" style="background-image: url('camisumicrofibra.jpeg')"></div>
+                <div class="product-img" style="background-image: url('camisumicrofibra.jpeg')" onclick="openLightbox(24)"></div>
                 <div class="product-content">
                     <h3>Camisú Branco</h3>
                     <p> Microfibra </p>
@@ -1017,7 +1248,7 @@
             </div>
             
             <div class="product-card">
-                <div class="product-img" style="background-image: url('jogo2.jpeg')"></div>
+                <div class="product-img" style="background-image: url('jogo2.jpeg')" onclick="openLightbox(25)"></div>
                 <div class="product-content">
                     <h3>Jogo Branco semi Luxo</h3>
                     <p> Ojá e Pano da Costa Bordados.</p> 
@@ -1074,7 +1305,190 @@
         </div>
     </footer>
 
+    <!-- Lightbox para visualização de imagens -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">
+            <i class="fas fa-times"></i>
+        </button>
+        
+        <button class="lightbox-nav prev" onclick="navigateImage(-1)">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        
+        <button class="lightbox-nav next" onclick="navigateImage(1)">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        
+        <div class="lightbox-zoom-controls">
+            <button class="lightbox-zoom-btn" onclick="zoomIn()">
+                <i class="fas fa-search-plus"></i>
+            </button>
+            <button class="lightbox-zoom-btn" onclick="zoomOut()">
+                <i class="fas fa-search-minus"></i>
+            </button>
+            <button class="lightbox-zoom-btn" onclick="resetZoom()">
+                <i class="fas fa-expand"></i>
+            </button>
+        </div>
+        
+        <div class="lightbox-content">
+            <div class="lightbox-image-container">
+                <img id="lightbox-img" src="" alt="Imagem do produto">
+            </div>
+        </div>
+        
+        <div class="lightbox-counter" id="lightbox-counter">1/26</div>
+    </div>
+
+    <a href="https://wa.me/5592994280161" class="whatsapp-float" target="_blank" title="Fale conosco no WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <script>
+        // Lista de imagens para o lightbox (extraídas de todas as seções)
+        const lightboxImages = [
+            'esteira.jpeg',
+            'palhadacosta.jpeg',
+            'charutosarava.jpeg',
+            'novofumo.jpeg',
+            'kitincenso.jpeg',
+            'novohungebe.jpeg',
+            'crocheverde.jpeg',
+            'novocoral.jpeg',
+            'kityawo.jpeg',
+            'kitpvelho.jpeg',
+            'lagdiba.jpeg',
+            'monjolo2.jpeg',
+            'cachimb.jpeg',
+            'obi.jpeg',
+            'fava.jpg',
+            'six3.jpeg',
+            'dan2.jpeg',
+            'punhal.jpeg',
+            'poouro.jpeg',
+            'cascalhotigre.jpeg',
+            'novosegui.jpeg',
+            'baralho.png',
+            'racao_certa.jpeg',
+            'saiapv.jpeg',
+            'camisumicrofibra.jpeg',
+            'jogo2.jpeg'
+        ];
+
+        let currentImageIndex = 0;
+        let currentScale = 1;
+        let startDistance = 0;
+        let isPinching = false;
+
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxCounter = document.getElementById('lightbox-counter');
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            currentScale = 1;
+            updateLightboxImage();
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            // Adiciona event listeners para gestos de pinça (zoom)
+            const container = document.querySelector('.lightbox-image-container');
+            container.addEventListener('touchstart', handleTouchStart, { passive: false });
+            container.addEventListener('touchmove', handleTouchMove, { passive: false });
+            container.addEventListener('touchend', handleTouchEnd);
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+            currentScale = 1;
+            
+            // Remove event listeners
+            const container = document.querySelector('.lightbox-image-container');
+            container.removeEventListener('touchstart', handleTouchStart);
+            container.removeEventListener('touchmove', handleTouchMove);
+            container.removeEventListener('touchend', handleTouchEnd);
+        }
+
+        function updateLightboxImage() {
+            lightboxImg.src = lightboxImages[currentImageIndex];
+            lightboxImg.style.transform = `scale(${currentScale})`;
+            lightboxCounter.textContent = `${currentImageIndex + 1}/${lightboxImages.length}`;
+        }
+
+        function navigateImage(direction) {
+            currentImageIndex += direction;
+            if (currentImageIndex < 0) {
+                currentImageIndex = lightboxImages.length - 1;
+            } else if (currentImageIndex >= lightboxImages.length) {
+                currentImageIndex = 0;
+            }
+            currentScale = 1;
+            updateLightboxImage();
+        }
+
+        function zoomIn() {
+            if (currentScale < 3) {
+                currentScale += 0.5;
+                lightboxImg.style.transform = `scale(${currentScale})`;
+            }
+        }
+
+        function zoomOut() {
+            if (currentScale > 0.5) {
+                currentScale -= 0.5;
+                lightboxImg.style.transform = `scale(${currentScale})`;
+            }
+        }
+
+        function resetZoom() {
+            currentScale = 1;
+            lightboxImg.style.transform = `scale(${currentScale})`;
+        }
+
+        // Funções para gestos de pinça (zoom) em celular
+        function handleTouchStart(e) {
+            if (e.touches.length === 2) {
+                e.preventDefault();
+                isPinching = true;
+                const touch1 = e.touches[0];
+                const touch2 = e.touches[1];
+                startDistance = Math.hypot(
+                    touch2.pageX - touch1.pageX,
+                    touch2.pageY - touch1.pageY
+                );
+            }
+        }
+
+        function handleTouchMove(e) {
+            if (isPinching && e.touches.length === 2) {
+                e.preventDefault();
+                const touch1 = e.touches[0];
+                const touch2 = e.touches[1];
+                const currentDistance = Math.hypot(
+                    touch2.pageX - touch1.pageX,
+                    touch2.pageY - touch1.pageY
+                );
+                
+                const scaleDiff = currentDistance / startDistance;
+                let newScale = currentScale * scaleDiff;
+                
+                // Limita o zoom entre 0.5 e 3
+                if (newScale >= 0.5 && newScale <= 3) {
+                    currentScale = newScale;
+                    lightboxImg.style.transform = `scale(${currentScale})`;
+                }
+                
+                startDistance = currentDistance;
+            }
+        }
+
+        function handleTouchEnd(e) {
+            if (e.touches.length < 2) {
+                isPinching = false;
+            }
+        }
+
         // Menu mobile
         document.getElementById('mobileMenu').addEventListener('click', function() {
             document.getElementById('navMenu').classList.toggle('active');
@@ -1126,29 +1540,24 @@
                 }
             });
         });
-    </script>
 
-    <a href="https://wa.me/5592994280161" class="whatsapp-float" target="_blank" title="Fale conosco no WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+        // Tecla ESC para fechar lightbox
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                closeLightbox();
+            }
+            
+            if (lightbox.classList.contains('active')) {
+                if (e.key === 'ArrowLeft') {
+                    navigateImage(-1);
+                } else if (e.key === 'ArrowRight') {
+                    navigateImage(1);
+                }
+            }
+        });
+    </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
