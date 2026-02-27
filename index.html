@@ -948,20 +948,7 @@
                     <p> Par(R$7)</p>
                 </div>
             </div>    
-            <div class="category-card" onclick="openLightbox(22)">
-                <div class="category-img" style="background-image: url('atare.jpeg')"></div>
-                <div class="category-content">
-                    <h3>Fava Ataré </h3>
-                    <p> (R$10)</p>
-                </div>
-            </div>   
-            <div class="category-card" onclick="openLightbox(23)">
-                <div class="category-img" style="background-image: url('alibe.jpeg')"></div>
-                <div class="category-content">
-                    <h3>Fava Alibe </h3>
-                    <p> (R$12)</p>
-                </div>
-            </div>            
+            
         </div>
     </section>
 
@@ -1028,6 +1015,33 @@
                     <div class="price">R$ 140</div>
                 </div>
             </div>
+
+            <!-- Primeiro novo produto - Índice 26 -->
+<div class="category-card" onclick="openLightbox(26)">
+    <div class="category-img" style="background-image: url('garra.jpeg')"></div>
+    <div class="category-content">
+        <h3>Garra Pombo Gira</h3>
+        <p>Par (R$7)</p>
+    </div>
+</div>
+
+<!-- Segundo novo produto - Índice 27 -->
+<div class="category-card" onclick="openLightbox(27)">
+    <div class="category-img" style="background-image: url('atare.jpeg')"></div>
+    <div class="category-content">
+        <h3>Título do Segundo Produto</h3>
+        <p>Descrição</p>
+    </div>
+</div>
+
+<!-- Terceiro novo produto - Índice 28 -->
+<div class="category-card" onclick="openLightbox(28)">
+    <div class="category-img" style="background-image: url('alibe.jpeg')"></div>
+    <div class="category-content">
+        <h3>Título do Terceiro Produto</h3>
+        <p>Descrição</p>
+    </div>
+</div>
         </div>
     </section>
     
@@ -1117,14 +1131,26 @@
 
     <script>
         const lightboxImages = [
-            'esteira.jpeg', 'palhadacosta.jpeg', 'charutosarava.jpeg', 'novofumo.jpeg',
-            'kitincenso.jpeg', 'novohungebe.jpeg', 'crocheverde.jpeg', 'novocoral.jpeg',
-            'kityawo.jpeg', 'kitpvelho.jpeg', 'lagdiba.jpeg', 'monjolo2.jpeg',
-            'cachimb.jpeg', 'obi.jpeg', 'fava.jpg', 'sixx.jpeg',
-            'duala.jpeg', 'punhal.jpeg', 'poouro.jpeg', 'cascalhotigre.jpeg',
-            'novosegui.jpeg', 'baralho.png', 'racao_certa.jpeg', 'saiapv.jpeg',
-            'camisumicrofibra.jpeg', 'garra.jpeg', 'pos.jpeg', 'atare2.jpeg', 'alibe.jpeg''jogo2.jpeg'
-        ];
+    // 0-20: Produtos originais
+    'esteira.jpeg', 'palhadacosta.jpeg', 'charutosarava.jpeg', 'novofumo.jpeg',
+    'kitincenso.jpeg', 'novohungebe.jpeg', 'crocheverde.jpeg', 'novocoral.jpeg',
+    'kityawo.jpeg', 'kitpvelho.jpeg', 'lagdiba.jpeg', 'monjolo2.jpeg',
+    'cachimb.jpeg', 'obi.jpeg', 'fava.jpg', 'sixx.jpeg',
+    'duala.jpeg', 'punhal.jpeg', 'poouro.jpeg', 'cascalhotigre.jpeg',
+    'novosegui.jpeg',
+    
+    // 21-25: Produtos especiais (mantendo os índices originais)
+    'baralho.png',           // 21
+    'racao_certa.jpeg',      // 22
+    'saiapv.jpeg',           // 23
+    'camisumicrofibra.jpeg', // 24
+    'jogo2.jpeg',            // 25
+    
+    // 26-28: SEUS 3 NOVOS PRODUTOS
+    'garra.jpeg',            // 26 - Primeiro novo produto
+    'atare.jpeg',    // 27 - Substitua pelo nome correto
+    'alibe.jpeg'     // 28 - Substitua pelo nome correto
+];
 
         let currentImageIndex = 0;
 
@@ -1171,6 +1197,7 @@
     </script>
 </body>
 </html>
+
 
 
 
