@@ -243,7 +243,7 @@
         }
 
         /* Seções */
-        .categories, .tarot-section, .featured-products, .about, .location-section {
+        .categories, .african-items, .tarot-section, .featured-products, .about, .location-section {
             max-width: 1200px;
             margin: 0 auto 40px;
             padding: 0 20px;
@@ -267,6 +267,15 @@
             width: 60px;
             height: 3px;
             background-color: var(--accent);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            margin: 20px 0 25px;
+            color: var(--secondary);
+            font-size: 1.4em;
+            font-weight: 500;
+            position: relative;
         }
 
         /* Grid de produtos */
@@ -886,69 +895,96 @@
                 </div>
             </div>
             <div class="category-card" onclick="openLightbox(13)">
-                <div class="category-img" style="background-image: url('obi.jpeg')"></div>
-                <div class="category-content">
-                    <h3>Obi Branco R$ 3</h3>
-                    <p>Nacional - 2 gomos</p>
-                </div>
-            </div>
-            <div class="category-card" onclick="openLightbox(14)">
-                <div class="category-img" style="background-image: url('pos.jpeg')"></div>
-                <div class="category-content">
-                    <h3>Pós Africanos (10g)</h3>
-                    <p>Yerossum (R$13), Epe Ebo(R$20) </p>
-                </div>
-            </div>
-            <div class="category-card" onclick="openLightbox(15)">
                 <div class="category-img" style="background-image: url('sixx.jpeg')"></div>
                 <div class="category-content">
                     <h3>Six Flowers R$ 45</h3>
                     <p>Perfume Afrodisíaco</p>
                 </div>
             </div>
-            <div class="category-card" onclick="openLightbox(16)">
+            <div class="category-card" onclick="openLightbox(14)">
                 <div class="category-img" style="background-image: url('duala.jpeg')"></div>
                 <div class="category-content">
                     <h3>Dan Duala R$ 65</h3>
                     <p>Afrodisíaco e atrativo</p>
                 </div>
             </div>
-            <div class="category-card" onclick="openLightbox(17)">
+            <div class="category-card" onclick="openLightbox(15)">
                 <div class="category-img" style="background-image: url('punhal.jpeg')"></div>
                 <div class="category-content">
                     <h3>Punhal R$ 7</h3>
                     <p>15cm - Preto/Vermelho</p>
                 </div>
             </div>
-            <div class="category-card" onclick="openLightbox(18)">
+            <div class="category-card" onclick="openLightbox(16)">
                 <div class="category-img" style="background-image: url('poouro.jpeg')"></div>
                 <div class="category-content">
                     <h3>Pó de Ouro R$ 9</h3>
                     <p>Fino e brilhante</p>
                 </div>
             </div>
-            <div class="category-card" onclick="openLightbox(19)">
+            <div class="category-card" onclick="openLightbox(17)">
                 <div class="category-img" style="background-image: url('cascalhotigre.jpeg')"></div>
                 <div class="category-content">
                     <h3>Olho de Tigre R$ 40</h3>
                     <p>Fio Cascalho - 200 contas</p>
                 </div>
             </div>
-            <div class="category-card" onclick="openLightbox(20)">
+            <div class="category-card" onclick="openLightbox(18)">
                 <div class="category-img" style="background-image: url('novosegui.jpeg')"></div>
                 <div class="category-content">
                     <h3>Segui Africano R$ 30</h3>
                     <p>Com mini firmas</p>
                 </div>
             </div>
- <div class="category-card" onclick="openLightbox(21)">
+        </div>
+    </section>
+
+    <!-- NOVA SEÇÃO: Ervas e Pós Africanos -->
+    <section class="african-items">
+        <h2 class="section-title">Ervas e Pós Africanos</h2>
+        <div class="categories-grid">
+            <div class="category-card" onclick="openLightbox(19)">
+                <div class="category-img" style="background-image: url('obi.jpeg')"></div>
+                <div class="category-content">
+                    <h3>Obi Branco R$ 3</h3>
+                    <p>Nacional - 2 gomos</p>
+                </div>
+            </div>
+            <div class="category-card" onclick="openLightbox(20)">
+                <div class="category-img" style="background-image: url('pos.jpeg')"></div>
+                <div class="category-content">
+                    <h3>Pós Africanos (10g)</h3>
+                    <p>Yerossum (R$13), Epe Ebo(R$20)</p>
+                </div>
+            </div>
+            <div class="category-card" onclick="openLightbox(21)">
                 <div class="category-img" style="background-image: url('agata.jpeg')"></div>
                 <div class="category-content">
-                    <h3>Ágata Rosa + Pedra do Amor Próprio </h3>
-                    <p> Fio Cascalho (R$50)</p>
+                    <h3>Ágata Rosa</h3>
+                    <p>Pedra do Amor Próprio - R$50</p>
                 </div>
-            </div>    
-            
+            </div>
+            <div class="category-card" onclick="openLightbox(22)">
+                <div class="category-img" style="background-image: url('garra.jpeg')"></div>
+                <div class="category-content">
+                    <h3>Garra Pombo Gira</h3>
+                    <p>Par (R$7)</p>
+                </div>
+            </div>
+            <div class="category-card" onclick="openLightbox(23)">
+                <div class="category-img" style="background-image: url('atare.jpeg')"></div>
+                <div class="category-content">
+                    <h3>Fava Ataré</h3>
+                    <p>R$10</p>
+                </div>
+            </div>
+            <div class="category-card" onclick="openLightbox(24)">
+                <div class="category-img" style="background-image: url('alibe.jpeg')"></div>
+                <div class="category-content">
+                    <h3>Fava de Xangô Alibe</h3>
+                    <p>R$12</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -960,7 +996,7 @@
         <h2 class="section-title">Oráculo do Povo Cigano</h2>
         
         <div class="tarot-card">
-            <div class="tarot-img" style="background-image: url('baralho.png')" onclick="openLightbox(21)"></div>
+            <div class="tarot-img" style="background-image: url('baralho.png')" onclick="openLightbox(25)"></div>
             <div class="tarot-content">
                 <h3>Baralho Cigano</h3>
                 <p>Consulta personalizada para orientação espiritual e insights sobre seu caminho.</p>
@@ -980,7 +1016,7 @@
     <section class="featured-products" id="promocoes">
         <h2 class="section-title" style="color: red;">* Promoção válida enquanto durar o estoque *</h2>
         <div class="products-grid">
-            <div class="product-card" onclick="openLightbox(22)">
+            <div class="product-card" onclick="openLightbox(26)">
                 <div class="product-img" style="background-image: url('racao_certa.jpeg')"></div>
                 <div class="product-content">
                     <h3>Branco nosso de cada dia</h3>
@@ -989,7 +1025,7 @@
                 </div>
             </div>
             
-            <div class="product-card" onclick="openLightbox(23)">
+            <div class="product-card" onclick="openLightbox(27)">
                 <div class="product-img" style="background-image: url('saiapv.jpeg')"></div>
                 <div class="product-content">
                     <h3>Saia Carijó</h3>
@@ -998,7 +1034,7 @@
                 </div>
             </div>
             
-            <div class="product-card" onclick="openLightbox(24)">
+            <div class="product-card" onclick="openLightbox(28)">
                 <div class="product-img" style="background-image: url('camisumicrofibra.jpeg')"></div>
                 <div class="product-content">
                     <h3>Camisú Branco</h3>
@@ -1007,7 +1043,7 @@
                 </div>
             </div>
             
-            <div class="product-card" onclick="openLightbox(25)">
+            <div class="product-card" onclick="openLightbox(29)">
                 <div class="product-img" style="background-image: url('jogo2.jpeg')"></div>
                 <div class="product-content">
                     <h3>Jogo Branco Semi Luxo</h3>
@@ -1015,33 +1051,6 @@
                     <div class="price">R$ 140</div>
                 </div>
             </div>
-
-            <!-- Primeiro novo produto - Índice 26 -->
-<div class="category-card" onclick="openLightbox(26)">
-    <div class="category-img" style="background-image: url('garra.jpeg')"></div>
-    <div class="category-content">
-        <h3>Garra Pombo Gira</h3>
-        <p>Par (R$7)</p>
-    </div>
-</div>
-
-<!-- Segundo novo produto - Índice 27 -->
-<div class="category-card" onclick="openLightbox(27)">
-    <div class="category-img" style="background-image: url('atare.jpeg')"></div>
-    <div class="category-content">
-        <h3>Fava Ataré </h3>
-        <p>(R$10)</p>
-    </div>
-</div>
-
-<!-- Terceiro novo produto - Índice 28 -->
-<div class="category-card" onclick="openLightbox(28)">
-    <div class="category-img" style="background-image: url('alibe.jpeg')"></div>
-    <div class="category-content">
-        <h3>Fava de Xangô Alibe</h3>
-        <p>R$(12)</p>
-    </div>
-</div>
         </div>
     </section>
     
@@ -1103,7 +1112,7 @@
                 <h3>Localização</h3>
                 <p>Manaus - Amazonas</p>
                 <p>Atendemos toda região</p>
-                </div>
+            </div>
         </div>
         <div class="copyright">
             &copy; 2025 Cabana Odara - Todos os direitos reservados.
@@ -1122,7 +1131,7 @@
             </div>
         </div>
         
-        <div class="lightbox-counter" id="lightbox-counter">1/26</div>
+        <div class="lightbox-counter" id="lightbox-counter">1/30</div>
     </div>
 
     <a href="https://wa.me/5592994280161" class="whatsapp-float" target="_blank" title="Fale conosco">
@@ -1130,27 +1139,24 @@
     </a>
 
     <script>
+        // Array completo com todas as 30 imagens (índices 0-29)
         const lightboxImages = [
-    // 0-20: Produtos originais
-    'esteira.jpeg', 'palhadacosta.jpeg', 'charutosarava.jpeg', 'novofumo.jpeg',
-    'kitincenso.jpeg', 'novohungebe.jpeg', 'crocheverde.jpeg', 'novocoral.jpeg',
-    'kityawo.jpeg', 'kitpvelho.jpeg', 'lagdiba.jpeg', 'monjolo2.jpeg',
-    'cachimb.jpeg', 'obi.jpeg', 'agata.jpeg', 'sixx.jpeg',
-    'duala.jpeg', 'punhal.jpeg', 'poouro.jpeg', 'cascalhotigre.jpeg',
-    'novosegui.jpeg',
-    
-    // 21-25: Produtos especiais (mantendo os índices originais)
-    'baralho.png',           // 21
-    'racao_certa.jpeg',      // 22
-    'saiapv.jpeg',           // 23
-    'camisumicrofibra.jpeg', // 24
-    'jogo2.jpeg',            // 25
-    
-    // 26-28: SEUS 3 NOVOS PRODUTOS
-    'garra.jpeg',            // 26 - Primeiro novo produto
-    'atare.jpeg',    // 27 - Substitua pelo nome correto
-    'alibe.jpeg'     // 28 - Substitua pelo nome correto
-];
+            // 0-18: Produtos originais (19 itens)
+            'esteira.jpeg', 'palhadacosta.jpeg', 'charutosarava.jpeg', 'novofumo.jpeg',
+            'kitincenso.jpeg', 'novohungebe.jpeg', 'crocheverde.jpeg', 'novocoral.jpeg',
+            'kityawo.jpeg', 'kitpvelho.jpeg', 'lagdiba.jpeg', 'monjolo2.jpeg',
+            'cachimb.jpeg', 'sixx.jpeg', 'duala.jpeg', 'punhal.jpeg',
+            'poouro.jpeg', 'cascalhotigre.jpeg', 'novosegui.jpeg',
+            
+            // 19-24: Ervas e Pós Africanos (6 itens)
+            'obi.jpeg', 'pos.jpeg', 'agata.jpeg', 'garra.jpeg', 'atare.jpeg', 'alibe.jpeg',
+            
+            // 25: Baralho Cigano
+            'baralho.png',
+            
+            // 26-29: Produtos em Promoção (4 itens)
+            'racao_certa.jpeg', 'saiapv.jpeg', 'camisumicrofibra.jpeg', 'jogo2.jpeg'
+        ];
 
         let currentImageIndex = 0;
 
@@ -1197,9 +1203,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
