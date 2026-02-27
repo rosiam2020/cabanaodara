@@ -52,12 +52,11 @@
             z-index: -1;
         }
 
-        /* Cabeçalho elegante */
+        /* Cabeçalho mais compacto */
         header {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
-            padding: 25px 20px;
-            text-align: center;
+            padding: 15px 20px;
             box-shadow: var(--shadow);
             position: relative;
             overflow: hidden;
@@ -65,8 +64,8 @@
 
         .header-content {
             display: flex;
-            flex-direction: column;
             align-items: center;
+            justify-content: center;
             max-width: 1200px;
             margin: 0 auto;
             position: relative;
@@ -76,42 +75,36 @@
         .logo-container {
             display: flex;
             align-items: center;
-            margin-bottom: 15px;
-            gap: 25px;
+            gap: 20px;
         }
 
         .logo-img {
-            width: 180px;
-            height: 180px;
+            width: 100px;
+            height: 100px;
             background: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             box-shadow: 0 0 15px rgba(0,0,0,0.3);
-            border: 3px solid var(--accent);
-            position: relative;
+            border: 2px solid var(--accent);
             overflow: hidden;
-            transition: transform 0.5s ease;
+            transition: transform 0.3s ease;
         }
 
         .logo-img:hover {
-            transform: rotate(5deg) scale(1.05);
+            transform: rotate(3deg) scale(1.05);
         }
 
         .logo-img img {
-            max-width: 160px;
-            max-height: 160px;
+            max-width: 90px;
+            max-height: 90px;
             border-radius: 50%;
             object-fit: cover;
         }
 
-        .logo-text {
-            text-align: left;
-        }
-
         .logo-text h1 {
-            font-size: 3.2em;
+            font-size: 2.2em;
             margin: 0;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
             color: white;
@@ -119,22 +112,11 @@
         }
 
         .logo-text .tagline {
-            font-size: 1.8em;
+            font-size: 1.2em;
             opacity: 0.9;
             font-style: italic;
-            margin-top: 8px;
+            margin-top: 5px;
             color: var(--silver);
-        }
-
-        header::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
-            background-size: cover;
         }
 
         /* Navegação moderna */
@@ -158,13 +140,13 @@
         .logo {
             color: white;
             font-weight: 700;
-            font-size: 1.5em;
+            font-size: 1.3em;
             display: flex;
             align-items: center;
         }
 
         .logo i {
-            margin-right: 10px;
+            margin-right: 8px;
         }
 
         nav ul {
@@ -173,19 +155,15 @@
             flex-wrap: wrap;
         }
 
-        nav li {
-            position: relative;
-        }
-
         nav a {
             display: block;
-            padding: 15px 20px;
+            padding: 12px 18px;
             color: white;
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
             position: relative;
-            overflow: hidden;
+            font-size: 0.95em;
         }
 
         nav a::before {
@@ -221,79 +199,41 @@
             cursor: pointer;
         }
 
-        /* Hero Section */
+        /* Hero Section mais compacta */
         .hero {
             background: linear-gradient(rgba(26, 71, 42, 0.8), rgba(46, 139, 87, 0.8)), url('tema.png');
             background-size: cover;
             background-position: center;
             color: white;
             text-align: center;
-            padding: 80px 20px;
-            margin-bottom: 40px;
+            padding: 50px 20px;
+            margin-bottom: 30px;
             position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, transparent 20%, rgba(0,0,0,0.3) 100%);
-            z-index: 1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            margin: 0 auto;
         }
 
         .hero h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
+            font-size: 2em;
+            margin-bottom: 15px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            animation: fadeInUp 1s ease;
         }
 
         .hero p {
-            font-size: 1.2em;
+            font-size: 1.1em;
             max-width: 700px;
-            margin: 0 auto 30px;
-            animation: fadeInUp 1s ease 0.2s both;
+            margin: 0 auto 20px;
         }
 
         .btn {
             display: inline-block;
             background-color: var(--accent);
             color: white;
-            padding: 12px 30px;
+            padding: 10px 25px;
             border-radius: 30px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
             box-shadow: var(--shadow);
-            position: relative;
-            overflow: hidden;
-            animation: fadeInUp 1s ease 0.4s both;
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.5s;
-        }
-
-        .btn:hover::before {
-            left: 100%;
+            font-size: 0.95em;
         }
 
         .btn:hover {
@@ -302,30 +242,20 @@
             box-shadow: 0 6px 12px rgba(0,0,0,0.2);
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Categorias/Produtos */
-        .categories {
+        /* Seções */
+        .categories, .tarot-section, .featured-products, .about, .location-section {
             max-width: 1200px;
-            margin: 0 auto 50px;
+            margin: 0 auto 40px;
             padding: 0 20px;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             color: var(--primary);
             position: relative;
-            padding-bottom: 15px;
+            padding-bottom: 12px;
+            font-size: 1.8em;
         }
 
         .section-title::after {
@@ -334,48 +264,36 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
+            width: 60px;
             height: 3px;
             background-color: var(--accent);
         }
 
+        /* Grid de produtos */
         .categories-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 20px;
         }
 
         .category-card {
             background: white;
-            border-radius: 10px;
+            border-radius: 8px;
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: all 0.3s ease;
-            cursor: pointer;
-            position: relative;
-        }
-
-        .category-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(to right, var(--accent), var(--purple));
-            z-index: 1;
         }
 
         .category-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-5px);
             box-shadow: var(--shadow-hover);
         }
 
         .category-img {
-            height: 200px;
+            height: 160px;
             background-size: cover;
             background-position: center;
-            transition: transform 0.5s ease;
+            transition: transform 0.3s ease;
             background-color: #f5f5f5;
             cursor: pointer;
         }
@@ -385,137 +303,90 @@
         }
 
         .category-content {
-            padding: 20px;
+            padding: 15px;
         }
 
         .category-content h3 {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             color: var(--primary);
+            font-size: 1.1em;
         }
 
         .category-content p {
             color: #666;
-            font-size: 0.95em;
+            font-size: 0.9em;
         }
 
-        /* Card de Baralho Cigano */
-        .tarot-section {
-            max-width: 1200px;
-            margin: 0 auto 50px;
-            padding: 0 20px;
-        }
-
+        /* Card do Baralho */
         .tarot-card {
             background: white;
-            border-radius: 10px;
+            border-radius: 8px;
             overflow: hidden;
             box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .tarot-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(to right, var(--accent), var(--purple));
-            z-index: 1;
-        }
-
-        .tarot-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-hover);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
         }
 
         .tarot-img {
-            height: 200px;
+            height: 250px;
             background-size: cover;
             background-position: center;
-            transition: transform 0.5s ease;
             background-color: #f5f5f5;
             cursor: pointer;
         }
 
-        .tarot-card:hover .tarot-img {
-            transform: scale(1.05);
-        }
-
         .tarot-content {
-            padding: 20px;
-            text-align: center;
+            padding: 25px;
         }
 
         .tarot-content h3 {
-            margin-bottom: 10px;
             color: var(--primary);
-            font-size: 1.4em;
-        }
-
-        .tarot-content p {
-            color: #666;
-            font-size: 0.95em;
-            margin-bottom: 15px;
+            font-size: 1.6em;
+            margin-bottom: 10px;
         }
 
         .tarot-price {
-            font-weight: 600;
-            color: var(--accent);
-            font-size: 1.3em;
-            margin-bottom: 15px;
+            margin: 15px 0;
         }
 
-        /* Produtos em Destaque */
-        .featured-products {
-            max-width: 1200px;
-            margin: 0 auto 50px;
-            padding: 0 20px;
+        .promo-banner {
+            background: #ff0000;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border-radius: 40px;
+            margin-bottom: 20px;
         }
 
+        /* Grid de produtos em destaque */
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
         }
 
         .product-card {
             background: white;
-            border-radius: 10px;
+            border-radius: 8px;
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .product-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(to right, var(--accent), var(--gold));
-            z-index: 1;
         }
 
         .product-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow-hover);
         }
 
         .product-img {
-            height: 200px;
+            height: 160px;
             background-size: cover;
             background-position: center;
-            transition: transform 0.5s ease;
             background-color: #f5f5f5;
             cursor: pointer;
-        }
-
-        .product-card:hover .product-img {
-            transform: scale(1.05);
         }
 
         .product-content {
@@ -523,15 +394,9 @@
         }
 
         .product-content h3 {
-            margin-bottom: 10px;
             color: var(--primary);
-            font-size: 1.1em;
-        }
-
-        .product-content p {
-            color: #666;
-            font-size: 0.9em;
-            margin-bottom: 15px;
+            font-size: 1em;
+            margin-bottom: 8px;
         }
 
         .price {
@@ -540,84 +405,97 @@
             font-size: 1.1em;
         }
 
-        /* Sobre nós */
+        /* Seção Sobre */
         .about {
-            max-width: 1200px;
-            margin: 0 auto 50px;
-            padding: 0 20px;
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
             align-items: center;
-            gap: 40px;
-        }
-
-        .about-content {
-            flex: 1;
-            min-width: 300px;
         }
 
         .about-image {
-            flex: 1;
-            min-width: 300px;
-            height: 400px;
-            border-radius: 10px;
+            height: 350px;
+            border-radius: 8px;
             background: url('viveiro.jpg') center/cover;
             box-shadow: var(--shadow);
-            position: relative;
-            overflow: hidden;
             background-color: #f5f5f5;
         }
 
-        .about-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, rgba(255,127,80,0.2), rgba(138,43,226,0.2));
-            z-index: 1;
+        /* Seção de Localização */
+        .location-container {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 25px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            padding: 25px;
         }
 
-        /* Rodapé elegante */
+        .location-info h3 {
+            color: var(--primary);
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .location-info p {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #555;
+            font-size: 0.95em;
+        }
+
+        .location-info i {
+            color: var(--accent);
+            font-size: 1.1em;
+            width: 22px;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 350px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Rodapé compacto */
         footer {
             background: var(--dark);
             color: white;
-            padding: 50px 20px 20px;
-            position: relative;
+            padding: 40px 20px 15px;
         }
 
         .footer-content {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-bottom: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin-bottom: 20px;
         }
 
         .footer-column h3 {
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .footer-column h3::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 2px;
-            background-color: var(--accent);
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
         }
 
         .footer-column p, .footer-column a {
             color: #bbb;
-            margin-bottom: 10px;
-            display: block;
+            margin-bottom: 8px;
+            font-size: 0.9em;
             text-decoration: none;
-            transition: color 0.3s ease;
         }
 
         .footer-column a:hover {
@@ -626,16 +504,16 @@
 
         .social-links {
             display: flex;
-            gap: 15px;
-            margin-top: 15px;
+            gap: 10px;
+            margin-top: 10px;
         }
 
         .social-links a {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
+            width: 35px;
+            height: 35px;
             background-color: rgba(255,255,255,0.1);
             border-radius: 50%;
             transition: all 0.3s ease;
@@ -648,37 +526,38 @@
 
         .copyright {
             text-align: center;
-            padding-top: 20px;
+            padding-top: 15px;
             border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 0.9em;
+            font-size: 0.85em;
             color: #999;
         }
 
-        /* botão WhatsApp flutuante */
+        /* WhatsApp flutuante */
         .whatsapp-float {
             position: fixed;
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             bottom: 20px;
             right: 20px;
             background-color: #25D366;
             color: white;
             border-radius: 50%;
             text-align: center;
-            font-size: 2em;
+            font-size: 1.8em;
             box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
             z-index: 100;
             transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        .whatsapp-float i {
-            margin-top: 15px;
-        }
+
         .whatsapp-float:hover {
             background-color: #20b954;
             transform: scale(1.1);
         }
 
-        /* Lightbox - Sistema de visualização de imagens otimizado para celular */
+        /* Lightbox */
         .lightbox {
             display: none;
             position: fixed;
@@ -705,89 +584,26 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px;
-        }
-
-        .lightbox-image-container {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            touch-action: none; /* Previne rolagem da página enquanto faz zoom */
+            padding: 15px;
         }
 
         .lightbox-image-container img {
             max-width: 100%;
-            max-height: 100%;
+            max-height: 90vh;
             object-fit: contain;
             transition: transform 0.1s ease;
             cursor: grab;
-            user-select: none;
-            -webkit-user-select: none;
-            -webkit-touch-callout: none;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.5);
-            border-radius: 4px;
-        }
-
-        .lightbox-image-container img:active {
-            cursor: grabbing;
         }
 
         .lightbox-close {
             position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
+            top: 15px;
+            right: 15px;
+            width: 40px;
+            height: 40px;
             background-color: var(--accent);
             color: white;
             border: none;
-            border-radius: 50%;
-            font-size: 1.8em;
-            cursor: pointer;
-            z-index: 2100;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-        }
-
-        .lightbox-close:hover {
-            background-color: var(--accent-dark);
-            transform: scale(1.1);
-        }
-
-        .lightbox-close:active {
-            transform: scale(0.95);
-        }
-
-        .lightbox-counter {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: rgba(255, 255, 255, 0.9);
-            color: var(--dark);
-            padding: 8px 16px;
-            border-radius: 30px;
-            font-size: 0.9em;
-            font-weight: 600;
-            z-index: 2100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        }
-
-        .lightbox-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 50px;
-            height: 50px;
-            background-color: rgba(255, 255, 255, 0.2);
-            color: white;
-            border: 2px solid rgba(255, 255, 255, 0.5);
             border-radius: 50%;
             font-size: 1.5em;
             cursor: pointer;
@@ -795,114 +611,46 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(5px);
         }
 
-        .lightbox-nav:hover {
-            background-color: rgba(255, 255, 255, 0.3);
-            border-color: white;
-            transform: translateY(-50%) scale(1.1);
-        }
-
-        .lightbox-nav:active {
-            transform: translateY(-50%) scale(0.95);
-        }
-
-        .lightbox-nav.prev {
-            left: 20px;
-        }
-
-        .lightbox-nav.next {
-            right: 20px;
-        }
-
-        .lightbox-nav i {
-            pointer-events: none;
-        }
-
-        .lightbox-zoom-controls {
+        .lightbox-nav {
             position: absolute;
-            bottom: 80px;
-            right: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            z-index: 2100;
-        }
-
-        .lightbox-zoom-btn {
-            width: 50px;
-            height: 50px;
-            background-color: var(--accent);
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.2);
             color: white;
-            border: none;
+            border: 2px solid rgba(255, 255, 255, 0.5);
             border-radius: 50%;
-            font-size: 1.3em;
+            font-size: 1.2em;
             cursor: pointer;
+            z-index: 2100;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
 
-        .lightbox-zoom-btn:hover {
-            background-color: var(--accent-dark);
-            transform: scale(1.1);
+        .lightbox-nav.prev {
+            left: 15px;
         }
 
-        .lightbox-zoom-btn:active {
-            transform: scale(0.95);
+        .lightbox-nav.next {
+            right: 15px;
         }
 
-        @media (max-width: 768px) {
-            .lightbox-nav {
-                width: 40px;
-                height: 40px;
-                font-size: 1.2em;
-            }
-            
-            .lightbox-close {
-                top: 10px;
-                right: 10px;
-                width: 40px;
-                height: 40px;
-                font-size: 1.5em;
-            }
-            
-            .lightbox-zoom-controls {
-                bottom: 70px;
-                right: 10px;
-            }
-            
-            .lightbox-zoom-btn {
-                width: 40px;
-                height: 40px;
-                font-size: 1.1em;
-            }
-            
-            .lightbox-counter {
-                bottom: 15px;
-                padding: 6px 12px;
-                font-size: 0.8em;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .lightbox-nav {
-                width: 35px;
-                height: 35px;
-                font-size: 1em;
-            }
-            
-            .lightbox-nav.prev {
-                left: 10px;
-            }
-            
-            .lightbox-nav.next {
-                right: 10px;
-            }
+        .lightbox-counter {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(255, 255, 255, 0.9);
+            color: var(--dark);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            z-index: 2100;
         }
 
         /* Responsividade */
@@ -915,7 +663,6 @@
                 width: 100%;
                 background-color: var(--secondary);
                 flex-direction: column;
-                box-shadow: 0 10px 15px rgba(0,0,0,0.1);
             }
 
             .nav-menu.active {
@@ -928,68 +675,75 @@
         }
 
         @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-            }
-            
             .logo-container {
                 flex-direction: column;
                 text-align: center;
-                gap: 15px;
+                gap: 10px;
             }
             
             .logo-img {
-                width: 150px;
-                height: 150px;
+                width: 80px;
+                height: 80px;
             }
             
             .logo-img img {
-                max-width: 130px;
-                max-height: 130px;
-            }
-            
-            .logo-text {
-                text-align: center;
+                max-width: 70px;
+                max-height: 70px;
             }
             
             .logo-text h1 {
-                font-size: 2.5em;
+                font-size: 1.8em;
             }
             
             .logo-text .tagline {
-                font-size: 1.4em;
+                font-size: 1em;
             }
 
             .hero h2 {
-                font-size: 2em;
+                font-size: 1.6em;
+            }
+
+            .tarot-card {
+                grid-template-columns: 1fr;
+            }
+
+            .tarot-img {
+                height: 200px;
             }
 
             .about {
-                flex-direction: column;
+                grid-template-columns: 1fr;
             }
 
-            .about-image {
-                width: 100%;
+            .location-container {
+                grid-template-columns: 1fr;
+            }
+
+            .map-container {
+                height: 300px;
             }
         }
 
         @media (max-width: 480px) {
-            .logo-img {
-                width: 130px;
-                height: 130px;
+            .categories-grid, .products-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 15px;
             }
-            
-            .logo-img img {
-                max-width: 110px;
-                max-height: 110px;
+
+            .category-img, .product-img {
+                height: 120px;
             }
-            
-            .logo-text h1 {
-                font-size: 2em;
+
+            .category-content {
+                padding: 10px;
             }
-            
-            .logo-text .tagline {
-                font-size: 1.2em;
+
+            .category-content h3 {
+                font-size: 0.95em;
+            }
+
+            .category-content p {
+                font-size: 0.8em;
             }
         }
     </style>
@@ -999,7 +753,7 @@
         <div class="header-content">
             <div class="logo-container">
                 <div class="logo-img">
-                    <img src="logo_cabana_odara.png" alt="Cabana Odara - Loja de materiais para Umbanda e Candomblé">
+                    <img src="logo_cabana_odara.png" alt="Cabana Odara">
                 </div>
                 <div class="logo-text">
                     <h1>Cabana Odara</h1>
@@ -1019,11 +773,12 @@
                 <i class="fas fa-bars"></i>
             </button>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="#inicio"><i class="fas fa-home"></i> Início</a></li>
-                <li><a href="#servicos"><i class="fas fa-hands"></i> Serviços</a></li>
-                <li><a href="#promocoes"><i class="fas fa-tag"></i> Promoções</a></li>
-                <li><a href="#sobre"><i class="fas fa-info-circle"></i> Sobre</a></li>
-                <li><a href="#contato"><i class="fas fa-envelope"></i> Contato</a></li>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#promocoes">Promoções</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#localizacao">Localização</a></li>
+                <li><a href="#contato">Contato</a></li>
             </ul>
         </div>
     </nav>
@@ -1031,167 +786,166 @@
     <section class="hero" id="inicio">
         <div class="hero-content">
             <h2>Elementos Sagrados para Sua Jornada Espiritual</h2>
-            <p>Encontre tudo o que precisa para rituais de Umbanda e Candomblé em um só lugar. Produtos de qualidade selecionados com respeito às tradições.</p>
+            <p>Encontre tudo para rituais de Umbanda e Candomblé em um só lugar.</p>
             <a href="#produtos" class="btn">Conheça Nossos Produtos</a>
         </div>
     </section>
 
-    <!-- SEÇÃO DE PRODUTOS/CATEGORIAS - MANTIDA COMPLETA -->
     <section class="categories" id="produtos">
         <h2 class="section-title">Nossos Produtos</h2>
         <div class="categories-grid">
-            <div class="category-card">
-                <div class="category-img" style="background-image: url('esteira.jpeg')" onclick="openLightbox(0)"></div>
+            <div class="category-card" onclick="openLightbox(0)">
+                <div class="category-img" style="background-image: url('esteira.jpeg')"></div>
                 <div class="category-content">
-                    <h3>Esteira de Palha R$ 60 </h3>
-                    <p>Medidas: 104cmx163 cm.</p>
+                    <h3>Esteira de Palha R$ 60</h3>
+                    <p>104cm x 163cm</p>
                 </div>
             </div>
-            <div class="category-card">
-                <div class="category-img" style="background-image: url('palhadacosta.jpeg')" onclick="openLightbox(1)"></div>
+            <div class="category-card" onclick="openLightbox(1)">
+                <div class="category-img" style="background-image: url('palhadacosta.jpeg')"></div>
                 <div class="category-content">
-                    <h3>Palha Da Costa - R$ 170 </h3>
-                    <p>Palha Da Costa Nacional - 1kg.</p>
+                    <h3>Palha Da Costa R$ 170</h3>
+                    <p>Nacional - 1kg</p>
                 </div>
             </div>
-            <div class="category-card">
-                <div class="category-img" style="background-image: url('charutosarava.jpeg')" onclick="openLightbox(2)"></div>
+            <div class="category-card" onclick="openLightbox(2)">
+                <div class="category-img" style="background-image: url('charutosarava.jpeg')"></div>
                 <div class="category-content">
-                    <h3>Charuto R$ 4 </h3>
-                    <p>Charuto Saravá (+18). </p>
+                    <h3>Charuto R$ 4</h3>
+                    <p>Saravá (+18)</p>
                 </div>
             </div>
-            <div class="category-card">
-                <div class="category-img" style="background-image: url('novofumo.jpeg')" onclick="openLightbox(3)"></div>
+            <div class="category-card" onclick="openLightbox(3)">
+                <div class="category-img" style="background-image: url('novofumo.jpeg')"></div>
                 <div class="category-content">
-                    <h3>Fumo R$ 30 </h3>
-                    <p>Mistura Especial para pretos Velhos  (+18).</p>
+                    <h3>Fumo Especial R$ 30</h3>
+                    <p>Para Pretos Velhos (+18)</p>
                 </div>
             </div>
-            <div class="category-card">
-                <div class="category-img" style="background-image: url('kitincenso.jpeg')" onclick="openLightbox(4)"></div>
+            <div class="category-card" onclick="openLightbox(4)">
+                <div class="category-img" style="background-image: url('kitincenso.jpeg')"></div>
                 <div class="category-content">
-                    <h3>Incenso Indiano R$ 3 </h3>
-                    <p>Incenso Natural Massala Indiano 7 Varetas.</p>
+                    <h3>Incenso Indiano R$ 3</h3>
+                    <p>Massala - 7 varetas</p>
                 </div>
             </div>
-            <div class="category-card">
-                <div class="category-img" style="background-image: url('novohungebe.jpeg')" onclick="openLightbox(5)"></div>
+            <div class="category-card" onclick="openLightbox(5)">
+                <div class="category-img" style="background-image: url('novohungebe.jpeg')"></div>
                 <div class="category-content">
-                    <h3>Coral Hungebe  R$ 35 </h3>
-                    <p> Produto 100% Natural - 30 contas. </p>
+                    <h3>Coral Hungebe R$ 35</h3>
+                    <p>100% Natural - 30 contas</p>
                 </div>
             </div>
-            <div class="category-card">
-                <div class="category-img" style="background-image: url('crocheverde.jpeg')" onclick="openLightbox(6)"></div>
+            <div class="category-card" onclick="openLightbox(6)">
+                <div class="category-img" style="background-image: url('crocheverde.jpeg')"></div>
                 <div class="category-content">
                     <h3>Crochê</h3>
-                    <p> Sob encomenda.</p>
+                    <p>Sob encomenda</p>
                 </div>
             </div>
-            <div class="category-card">
-                <div class="category-img" style="background-image: url('novocoral.jpeg')" onclick="openLightbox(7)"></div>
+            <div class="category-card" onclick="openLightbox(7)">
+                <div class="category-img" style="background-image: url('novocoral.jpeg')"></div>
                 <div class="category-content">
-                    <h3>Colar Monjolo - Coral R$ 40 </h3>
-                    <p> Fio Africano - Diversas Cores. </p>
+                    <h3>Colar Monjolo R$ 40</h3>
+                    <p>Fio Africano</p>
                 </div>
             </div>
-            <div class="category-card">
-                <div class="category-img" style="background-image: url('kityawo.jpeg')" onclick="openLightbox(8)"></div>
+            <div class="category-card" onclick="openLightbox(8)">
+                <div class="category-img" style="background-image: url('kityawo.jpeg')"></div>
                 <div class="category-content">
-                    <h3> Kit Yawô (Ágata) R$ 50 </h3>
-                    <p> Abam branco + Dilonga decorada. </p>
+                    <h3>Kit Yawô R$ 50</h3>
+                    <p>Abam + Dilonga decorada</p>
                 </div>
             </div>
-            <div class="category-card">
-                <div class="category-img" style="background-image: url('kitpvelho.jpeg')" onclick="openLightbox(9)"></div>
+            <div class="category-card" onclick="openLightbox(9)">
+                <div class="category-img" style="background-image: url('kitpvelho.jpeg')"></div>
                 <div class="category-content">
-                    <h3> Fumo Especial + Cachimbo (P) - R$ 45 </h3>
-                    <p> Fumo Especial para Pretos Velhos.</p>
+                    <h3>Kit P. Velho R$ 45</h3>
+                    <p>Fumo + Cachimbo (P)</p>
                 </div>
             </div>
-            <div class="category-card">
-                <div class="category-img" style="background-image: url('lagdiba.jpeg')" onclick="openLightbox(10)"></div>
+            <div class="category-card" onclick="openLightbox(10)">
+                <div class="category-img" style="background-image: url('lagdiba.jpeg')"></div>
                 <div class="category-content">
-                    <h3> Lagdibá Preto Médio R$ 90.</h3>
-                    <p>Colar Africano Preto Médio .</p>
+                    <h3>Lagdibá Preto R$ 90</h3>
+                    <p>Colar Africano Médio</p>
                 </div>
             </div>
-            <div class="category-card">
-                <div class="category-img" style="background-image: url('monjolo2.jpeg')" onclick="openLightbox(11)"></div>
+            <div class="category-card" onclick="openLightbox(11)">
+                <div class="category-img" style="background-image: url('monjolo2.jpeg')"></div>
                 <div class="category-content">
-                    <h3>Ileke Africano Rústico R$ 40 </h3>
-                    <p>Fio Ileke Africano - Rústico na cor palha.</p>
+                    <h3>Ileke Rústico R$ 40</h3>
+                    <p>Fio Africano cor palha</p>
                 </div>
             </div>
-            <div class="category-card">
-                <div class="category-img" style="background-image: url('cachimb.jpeg')" onclick="openLightbox(12)"></div>
+            <div class="category-card" onclick="openLightbox(12)">
+                <div class="category-img" style="background-image: url('cachimb.jpeg')"></div>
                 <div class="category-content">
-                    <h3>Cachimbos Diversos </h3>
-                    <p>Angico (R$40); Madeira Preto P (R$18). </p>
+                    <h3>Cachimbos</h3>
+                    <p>Angico R$40 | Madeira R$18</p>
                 </div>
             </div>
-            <div class="category-card">
-                <div class="category-img" style="background-image: url('obi.jpeg')" onclick="openLightbox(13)"></div>
+            <div class="category-card" onclick="openLightbox(13)">
+                <div class="category-img" style="background-image: url('obi.jpeg')"></div>
                 <div class="category-content">
-                    <h3>Obi Branco Nacional R$ 3 </h3>
-                    <p>Obi Nacional 2 Gomos.</p>
+                    <h3>Obi Branco R$ 3</h3>
+                    <p>Nacional - 2 gomos</p>
                 </div>
             </div>
-            <div class="category-card">
-                <div class="category-img" style="background-image: url('fava.jpg')" onclick="openLightbox(14)"></div>
+            <div class="category-card" onclick="openLightbox(14)">
+                <div class="category-img" style="background-image: url('fava.jpg')"></div>
                 <div class="category-content">
-                    <h3>Favas Tradicionais Africanas </h3>
-                    <p> Aridan, Bejerecum, Ataré...</p>
+                    <h3>Favas Africanas</h3>
+                    <p>Aridan, Ataré, Bejerecum</p>
                 </div>
             </div>
-            <div class="category-card">
-                <div class="category-img" style="background-image: url('sixx.jpeg')" onclick="openLightbox(15)"></div>
+            <div class="category-card" onclick="openLightbox(15)">
+                <div class="category-img" style="background-image: url('sixx.jpeg')"></div>
                 <div class="category-content">
-                    <h3>Six Flowers - R$ 45 </h3>
-                    <p>Perfume afrodisíaco da Nigéria. </p>
+                    <h3>Six Flowers R$ 45</h3>
+                    <p>Perfume Afrodisíaco</p>
                 </div>
             </div>
-            <div class="category-card">
-                <div class="category-img" style="background-image: url('duala.jpeg')" onclick="openLightbox(16)"></div>
+            <div class="category-card" onclick="openLightbox(16)">
+                <div class="category-img" style="background-image: url('duala.jpeg')"></div>
                 <div class="category-content">
-                    <h3> Dan Duala -  R$ 65 </h3>
-                    <p>Afrodisíaco e atrativo.</p>
+                    <h3>Dan Duala R$ 65</h3>
+                    <p>Afrodisíaco e atrativo</p>
                 </div>
             </div>
-            <div class="category-card">
-                <div class="category-img" style="background-image: url('punhal.jpeg')" onclick="openLightbox(17)"></div>
+            <div class="category-card" onclick="openLightbox(17)">
+                <div class="category-img" style="background-image: url('punhal.jpeg')"></div>
                 <div class="category-content">
-                    <h3> Punhal - R$ 7 </h3>
-                    <p> 15 cm na cor preto e vermelho.</p>
+                    <h3>Punhal R$ 7</h3>
+                    <p>15cm - Preto/Vermelho</p>
                 </div>
             </div>
-            <div class="category-card">
-                <div class="category-img" style="background-image: url('poouro.jpeg')" onclick="openLightbox(18)"></div>
+            <div class="category-card" onclick="openLightbox(18)">
+                <div class="category-img" style="background-image: url('poouro.jpeg')"></div>
                 <div class="category-content">
-                    <h3> Pó de Ouro - R$ 9 </h3>
-                    <p> Pó fino, dourado e brilhante .</p>
+                    <h3>Pó de Ouro R$ 9</h3>
+                    <p>Fino e brilhante</p>
                 </div>
             </div>
-            <div class="category-card">
-                <div class="category-img" style="background-image: url('cascalhotigre.jpeg')" onclick="openLightbox(19)"></div>
+            <div class="category-card" onclick="openLightbox(19)">
+                <div class="category-img" style="background-image: url('cascalhotigre.jpeg')"></div>
                 <div class="category-content">
-                    <h3> Cascalho Olho de Tigre - R$ 40 </h3>
-                    <p> Fio de Pedra Natural 200 contas .</p>
+                    <h3>Olho de Tigre R$ 40</h3>
+                    <p>Fio natural - 200 contas</p>
                 </div>
             </div>
-            <div class="category-card">
-                <div class="category-img" style="background-image: url('novosegui.jpeg')" onclick="openLightbox(20)"></div>
+            <div class="category-card" onclick="openLightbox(20)">
+                <div class="category-img" style="background-image: url('novosegui.jpeg')"></div>
                 <div class="category-content">
-                    <h3> Segui Africano- R$ 30 </h3>
-                    <p> Fio com mini firmas - Cores diversas.</p>
+                    <h3>Segui Africano R$ 30</h3>
+                    <p>Com mini firmas</p>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="tarot-section" id="servicos">
-        <div style="background: #ff0000; color: white; padding: 15px; text-align: center; font-size: 1.8rem; font-weight: bold; border-radius: 50px; margin-bottom: 25px; width: 100%;">
+        <div class="promo-banner">
             🔥 PROMOÇÃO DE INAUGURAÇÃO 🔥
         </div>
         
@@ -1201,58 +955,56 @@
             <div class="tarot-img" style="background-image: url('baralho.png')" onclick="openLightbox(21)"></div>
             <div class="tarot-content">
                 <h3>Baralho Cigano</h3>
-                <p>Consulta personalizada com Baralho Cigano para orientação espiritual e insights sobre seu caminho. Agende seu horário e descubra as mensagens que o universo tem para você.</p>
+                <p>Consulta personalizada para orientação espiritual e insights sobre seu caminho.</p>
                 
                 <div class="tarot-price">
-                    <s style="color: #999; font-size: 1.2rem; margin-right: 15px;">R$ 100,00</s> 
-                    <strong style="color: #28a745; font-size: 1.8rem;">R$ 70,00</strong>
+                    <s style="color: #999;">R$ 100,00</s> 
+                    <strong style="color: #28a745; font-size: 2em;">R$ 70,00</strong>
                 </div>
                 
-                <p style="color: #ff4757; font-weight: 600; margin: 10px 0; font-size: 1.1rem;">
-                    Promoção válida para Fevereiro
-                </p>
+                <p style="color: #ff4757; margin: 10px 0;">Promoção válida para Fevereiro</p>
                 
-                <a href="https://wa.me/5592994280161?text=Olá! Gostaria de agendar uma consulta com Baralho Cigano - Promoção de inauguração." class="btn" target="_blank">Agendar Consulta</a>
+                <a href="https://wa.me/5592994280161?text=Olá! Gostaria de agendar uma consulta com Baralho Cigano" class="btn" target="_blank">Agendar Consulta</a>
             </div>
         </div>
     </section>
 
     <section class="featured-products" id="promocoes">
-        <h2 class="section-title" style="color: red;"> * Promoção válida enquanto durar o estoque * </h2>
+        <h2 class="section-title" style="color: red;">* Promoção válida enquanto durar o estoque *</h2>
         <div class="products-grid">
-            <div class="product-card">
-                <div class="product-img" style="background-image: url('racao_certa.jpeg')" onclick="openLightbox(22)"></div>
+            <div class="product-card" onclick="openLightbox(22)">
+                <div class="product-img" style="background-image: url('racao_certa.jpeg')"></div>
                 <div class="product-content">
-                    <h3> Branco nosso de cada dia</h3>
-                    <p> Ração em microfibra (Saia, Ojá e Pano da Costa).</p>
-                    <div class="price"> R$ 130,00 </div>
+                    <h3>Branco nosso de cada dia</h3>
+                    <p>Saia + Ojá + Pano da Costa</p>
+                    <div class="price">R$ 130,00</div>
                 </div>
             </div>
             
-            <div class="product-card">
-                <div class="product-img" style="background-image: url('saiapv.jpeg')" onclick="openLightbox(23)"></div>
+            <div class="product-card" onclick="openLightbox(23)">
+                <div class="product-img" style="background-image: url('saiapv.jpeg')"></div>
                 <div class="product-content">
-                    <h3> Saia Carijó </h3>
-                    <p> Saia para Preta Velha.</p>
-                    <div class="price"> R$ 140 </div>
+                    <h3>Saia Carijó</h3>
+                    <p>Para Preta Velha</p>
+                    <div class="price">R$ 140</div>
                 </div>
             </div>
             
-            <div class="product-card">
-                <div class="product-img" style="background-image: url('camisumicrofibra.jpeg')" onclick="openLightbox(24)"></div>
+            <div class="product-card" onclick="openLightbox(24)">
+                <div class="product-img" style="background-image: url('camisumicrofibra.jpeg')"></div>
                 <div class="product-content">
                     <h3>Camisú Branco</h3>
-                    <p> Microfibra </p>
-                    <div class="price"> R$ 40 </div>
+                    <p>Microfibra</p>
+                    <div class="price">R$ 40</div>
                 </div>
             </div>
             
-            <div class="product-card">
-                <div class="product-img" style="background-image: url('jogo2.jpeg')" onclick="openLightbox(25)"></div>
+            <div class="product-card" onclick="openLightbox(25)">
+                <div class="product-img" style="background-image: url('jogo2.jpeg')"></div>
                 <div class="product-content">
-                    <h3>Jogo Branco semi Luxo</h3>
-                    <p> Ojá e Pano da Costa Bordados.</p> 
-                    <div class="price"> R$ 140 </div>
+                    <h3>Jogo Branco Semi Luxo</h3>
+                    <p>Ojá + Pano da Costa Bordados</p>
+                    <div class="price">R$ 140</div>
                 </div>
             </div>
         </div>
@@ -1261,35 +1013,54 @@
     <section class="about" id="sobre">
         <div class="about-content">
             <h2 class="section-title">Sobre Nós</h2>
-            <p>A Cabana Odara é um espaço dedicado à preservação e disseminação das tradições afro-brasileiras. Oferecemos materiais de qualidade para terreiros, casas de axé e praticantes das religiões de matriz africana.</p>
-            <p>Nosso tema "Kò sí ewé, kò sí Òrìṣà" reflete a importância fundamental das ervas nos cultos aos Orixás, como diz o provérbio yorubá: "Sem folhas, não há Orixá".</p>
-            <p>Trabalhamos com respeito às tradições e buscamos sempre oferecer produtos que atendam às necessidades ritualísticas dos nossos clientes, com a qualidade que merecem.</p>
-            <a href="#" class="btn">Conheça Nossa História</a>
+            <p>A Cabana Odara é um espaço dedicado à preservação das tradições afro-brasileiras. Oferecemos materiais de qualidade para terreiros, casas de axé e praticantes.</p>
+            <p>"Kò sí ewé, kò sí Òrìṣà" - Sem folhas, não há Orixá.</p>
+            <p>Trabalhamos com respeito às tradições e qualidade que você merece.</p>
+            <a href="#" class="btn">Nossa História</a>
         </div>
         <div class="about-image"></div>
+    </section>
+
+    <!-- SEÇÃO DE LOCALIZAÇÃO COM MAPA -->
+    <section class="location-section" id="localizacao">
+        <h2 class="section-title">Nossa Localização</h2>
+        <div class="location-container">
+            <div class="location-info">
+                <h3>Cabana Odara</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Manaus - Amazonas</p>
+                <p><i class="fas fa-clock"></i> Segunda a Sexta: 9h às 22h</p>
+                <p><i class="fas fa-clock"></i> Sábado: 8h às 12h</p>
+                <p><i class="fas fa-clock"></i> Domingo: 9h às 13h</p>
+                <p><i class="fas fa-truck"></i> Serviço por Uber entrega</p>
+                <a href="https://wa.me/5592994280161" class="btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Como chegar
+                </a>
+            </div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7968.064217662666!2d-59.988872556160395!3d-3.086105174250586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x926c1bf337832a0b%3A0x60a0bccf1c38aa36!2sCabana%20Odara!5e0!3m2!1spt-BR!2sbr!4v1772154123959!5m2!1spt-BR!2sbr" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                </iframe>
+            </div>
+        </div>
     </section>
 
     <footer id="contato">
         <div class="footer-content">
             <div class="footer-column">
                 <h3>Contato</h3>
-                <p>Email: <a href="mailto:cabanaodara@gmail.com">cabanaodara@gmail.com</a></p>
-                <p>Tel: <a class="whatsapp-link" href="https://wa.me/5592994280161" target="_blank">(92) 99428-0161</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:cabanaodara@gmail.com">cabanaodara@gmail.com</a></p>
+                <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/5592994280161" target="_blank">(92) 99428-0161</a></p>
                 <div class="social-links">
-                    <a href="https://wa.me/5592994280161" target="_blank" title="WhatsApp">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
-                    <a href="https://www.instagram.com/cabanaodara/" target="_blank" title="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="mailto:cabanaodara@gmail.com" title="Email">
-                        <i class="fas fa-envelope"></i>
-                    </a>
+                    <a href="https://wa.me/5592994280161" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.instagram.com/cabanaodara/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="mailto:cabanaodara@gmail.com"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
             <div class="footer-column">
-                <h3>Horário de Funcionamento</h3>
-                <p>Segunda a Sexta: 9h às 22h</p>
+                <h3>Horário</h3>
+                <p>Seg a Sex: 9h às 22h</p>
                 <p>Sábado: 8h às 12h</p>
                 <p>Domingo: 9h às 13h</p>
             </div>
@@ -1297,7 +1068,7 @@
                 <h3>Localização</h3>
                 <p>Manaus - Amazonas</p>
                 <p>Atendemos toda região</p>
-                <p>Serviço por Uber entrega </p>
+                <p><a href="#localizacao">Ver mapa</a></p>
             </div>
         </div>
         <div class="copyright">
@@ -1305,31 +1076,11 @@
         </div>
     </footer>
 
-    <!-- Lightbox para visualização de imagens -->
+    <!-- Lightbox -->
     <div class="lightbox" id="lightbox">
-        <button class="lightbox-close" onclick="closeLightbox()">
-            <i class="fas fa-times"></i>
-        </button>
-        
-        <button class="lightbox-nav prev" onclick="navigateImage(-1)">
-            <i class="fas fa-chevron-left"></i>
-        </button>
-        
-        <button class="lightbox-nav next" onclick="navigateImage(1)">
-            <i class="fas fa-chevron-right"></i>
-        </button>
-        
-        <div class="lightbox-zoom-controls">
-            <button class="lightbox-zoom-btn" onclick="zoomIn()">
-                <i class="fas fa-search-plus"></i>
-            </button>
-            <button class="lightbox-zoom-btn" onclick="zoomOut()">
-                <i class="fas fa-search-minus"></i>
-            </button>
-            <button class="lightbox-zoom-btn" onclick="resetZoom()">
-                <i class="fas fa-expand"></i>
-            </button>
-        </div>
+        <button class="lightbox-close" onclick="closeLightbox()"><i class="fas fa-times"></i></button>
+        <button class="lightbox-nav prev" onclick="navigateImage(-1)"><i class="fas fa-chevron-left"></i></button>
+        <button class="lightbox-nav next" onclick="navigateImage(1)"><i class="fas fa-chevron-right"></i></button>
         
         <div class="lightbox-content">
             <div class="lightbox-image-container">
@@ -1340,153 +1091,43 @@
         <div class="lightbox-counter" id="lightbox-counter">1/26</div>
     </div>
 
-    <a href="https://wa.me/5592994280161" class="whatsapp-float" target="_blank" title="Fale conosco no WhatsApp">
+    <a href="https://wa.me/5592994280161" class="whatsapp-float" target="_blank" title="Fale conosco">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <script>
-        // Lista de imagens para o lightbox (extraídas de todas as seções)
         const lightboxImages = [
-            'esteira.jpeg',
-            'palhadacosta.jpeg',
-            'charutosarava.jpeg',
-            'novofumo.jpeg',
-            'kitincenso.jpeg',
-            'novohungebe.jpeg',
-            'crocheverde.jpeg',
-            'novocoral.jpeg',
-            'kityawo.jpeg',
-            'kitpvelho.jpeg',
-            'lagdiba.jpeg',
-            'monjolo2.jpeg',
-            'cachimb.jpeg',
-            'obi.jpeg',
-            'fava.jpg',
-            'sixx.jpeg',
-            'duala.jpeg',
-            'punhal.jpeg',
-            'poouro.jpeg',
-            'cascalhotigre.jpeg',
-            'novosegui.jpeg',
-            'baralho.png',
-            'racao_certa.jpeg',
-            'saiapv.jpeg',
-            'camisumicrofibra.jpeg',
-            'jogo2.jpeg'
+            'esteira.jpeg', 'palhadacosta.jpeg', 'charutosarava.jpeg', 'novofumo.jpeg',
+            'kitincenso.jpeg', 'novohungebe.jpeg', 'crocheverde.jpeg', 'novocoral.jpeg',
+            'kityawo.jpeg', 'kitpvelho.jpeg', 'lagdiba.jpeg', 'monjolo2.jpeg',
+            'cachimb.jpeg', 'obi.jpeg', 'fava.jpg', 'sixx.jpeg',
+            'duala.jpeg', 'punhal.jpeg', 'poouro.jpeg', 'cascalhotigre.jpeg',
+            'novosegui.jpeg', 'baralho.png', 'racao_certa.jpeg', 'saiapv.jpeg',
+            'camisumicrofibra.jpeg', 'jogo2.jpeg'
         ];
 
         let currentImageIndex = 0;
-        let currentScale = 1;
-        let startDistance = 0;
-        let isPinching = false;
-
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-        const lightboxCounter = document.getElementById('lightbox-counter');
 
         function openLightbox(index) {
             currentImageIndex = index;
-            currentScale = 1;
-            updateLightboxImage();
-            lightbox.classList.add('active');
+            document.getElementById('lightbox-img').src = lightboxImages[index];
+            document.getElementById('lightbox-counter').textContent = `${index + 1}/${lightboxImages.length}`;
+            document.getElementById('lightbox').classList.add('active');
             document.body.style.overflow = 'hidden';
-            
-            // Adiciona event listeners para gestos de pinça (zoom)
-            const container = document.querySelector('.lightbox-image-container');
-            container.addEventListener('touchstart', handleTouchStart, { passive: false });
-            container.addEventListener('touchmove', handleTouchMove, { passive: false });
-            container.addEventListener('touchend', handleTouchEnd);
         }
 
         function closeLightbox() {
-            lightbox.classList.remove('active');
+            document.getElementById('lightbox').classList.remove('active');
             document.body.style.overflow = '';
-            currentScale = 1;
-            
-            // Remove event listeners
-            const container = document.querySelector('.lightbox-image-container');
-            container.removeEventListener('touchstart', handleTouchStart);
-            container.removeEventListener('touchmove', handleTouchMove);
-            container.removeEventListener('touchend', handleTouchEnd);
-        }
-
-        function updateLightboxImage() {
-            lightboxImg.src = lightboxImages[currentImageIndex];
-            lightboxImg.style.transform = `scale(${currentScale})`;
-            lightboxCounter.textContent = `${currentImageIndex + 1}/${lightboxImages.length}`;
         }
 
         function navigateImage(direction) {
             currentImageIndex += direction;
-            if (currentImageIndex < 0) {
-                currentImageIndex = lightboxImages.length - 1;
-            } else if (currentImageIndex >= lightboxImages.length) {
-                currentImageIndex = 0;
-            }
-            currentScale = 1;
-            updateLightboxImage();
-        }
-
-        function zoomIn() {
-            if (currentScale < 3) {
-                currentScale += 0.5;
-                lightboxImg.style.transform = `scale(${currentScale})`;
-            }
-        }
-
-        function zoomOut() {
-            if (currentScale > 0.5) {
-                currentScale -= 0.5;
-                lightboxImg.style.transform = `scale(${currentScale})`;
-            }
-        }
-
-        function resetZoom() {
-            currentScale = 1;
-            lightboxImg.style.transform = `scale(${currentScale})`;
-        }
-
-        // Funções para gestos de pinça (zoom) em celular
-        function handleTouchStart(e) {
-            if (e.touches.length === 2) {
-                e.preventDefault();
-                isPinching = true;
-                const touch1 = e.touches[0];
-                const touch2 = e.touches[1];
-                startDistance = Math.hypot(
-                    touch2.pageX - touch1.pageX,
-                    touch2.pageY - touch1.pageY
-                );
-            }
-        }
-
-        function handleTouchMove(e) {
-            if (isPinching && e.touches.length === 2) {
-                e.preventDefault();
-                const touch1 = e.touches[0];
-                const touch2 = e.touches[1];
-                const currentDistance = Math.hypot(
-                    touch2.pageX - touch1.pageX,
-                    touch2.pageY - touch1.pageY
-                );
-                
-                const scaleDiff = currentDistance / startDistance;
-                let newScale = currentScale * scaleDiff;
-                
-                // Limita o zoom entre 0.5 e 3
-                if (newScale >= 0.5 && newScale <= 3) {
-                    currentScale = newScale;
-                    lightboxImg.style.transform = `scale(${currentScale})`;
-                }
-                
-                startDistance = currentDistance;
-            }
-        }
-
-        function handleTouchEnd(e) {
-            if (e.touches.length < 2) {
-                isPinching = false;
-            }
+            if (currentImageIndex < 0) currentImageIndex = lightboxImages.length - 1;
+            if (currentImageIndex >= lightboxImages.length) currentImageIndex = 0;
+            
+            document.getElementById('lightbox-img').src = lightboxImages[currentImageIndex];
+            document.getElementById('lightbox-counter').textContent = `${currentImageIndex + 1}/${lightboxImages.length}`;
         }
 
         // Menu mobile
@@ -1494,83 +1135,19 @@
             document.getElementById('navMenu').classList.toggle('active');
         });
 
-        // Fechar menu ao clicar em um link
+        // Fechar menu ao clicar em link
         document.querySelectorAll('.nav-menu a').forEach(link => {
-            link.addEventListener('click', function() {
+            link.addEventListener('click', () => {
                 document.getElementById('navMenu').classList.remove('active');
-            });
-        });
-
-        // Animação de entrada para elementos
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observar elementos para animação
-        document.querySelectorAll('.category-card, .product-card, .tarot-card').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            observer.observe(el);
-        });
-
-        // Scroll suave para links âncora
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId !== '#') {
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                    }
-                }
             });
         });
 
         // Tecla ESC para fechar lightbox
         document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+            if (e.key === 'Escape' && document.getElementById('lightbox').classList.contains('active')) {
                 closeLightbox();
-            }
-            
-            if (lightbox.classList.contains('active')) {
-                if (e.key === 'ArrowLeft') {
-                    navigateImage(-1);
-                } else if (e.key === 'ArrowRight') {
-                    navigateImage(1);
-                }
             }
         });
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
