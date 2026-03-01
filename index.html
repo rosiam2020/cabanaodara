@@ -662,6 +662,127 @@
             z-index: 2100;
         }
 
+        /* CARD DO MAPA ASTRAL - NOVO */
+        .mapa-astral-card {
+            background: linear-gradient(135deg, #fff8e7, #f5e6d3);
+            border: 2px solid #8B7355;
+            border-radius: 15px;
+            padding: 0;
+            margin: 30px auto;
+            max-width: 500px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2), 0 0 0 1px #D4AF37 inset;
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .mapa-astral-header {
+            background-color: #4A2C2C;
+            color: #D4AF37;
+            padding: 12px 15px;
+            border-bottom: 2px solid #8B7355;
+        }
+
+        .mapa-astral-header h2 {
+            margin: 0;
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-shadow: 1px 1px 0 #000;
+        }
+
+        .mapa-astral-body {
+            padding: 20px 20px 25px;
+        }
+
+        .mapa-astral-list {
+            text-align: left;
+            margin-bottom: 20px;
+            padding-left: 10px;
+        }
+
+        .mapa-astral-list p {
+            margin: 10px 0;
+            font-size: 1.1rem;
+            color: #2C1E0E;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .mapa-astral-list p span {
+            font-size: 0.9rem;
+            color: #6b4f32;
+            font-style: italic;
+        }
+
+        .mapa-astral-list i, 
+        .mapa-astral-list p strong {
+            color: #8B4513;
+        }
+
+        .mapa-astral-preco {
+            margin: 20px 0 25px;
+            border-top: 2px dashed #D4AF37;
+            border-bottom: 2px dashed #D4AF37;
+            padding: 15px 0;
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        .preco-label {
+            display: block;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            color: #4A2C2C;
+            letter-spacing: 2px;
+        }
+
+        .preco-valor {
+            font-size: 4rem;
+            font-weight: 800;
+            color: #B8860B;
+            line-height: 1;
+            text-shadow: 2px 2px 0 #FEDC8C;
+        }
+
+        .preco-valor::after {
+            content: " reais";
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: #4A2C2C;
+            letter-spacing: 0;
+        }
+
+        .mapa-astral-contato {
+            margin-top: 20px;
+        }
+
+        .btn-mapa-astral {
+            display: inline-block;
+            background-color: #25D366;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            border: 2px solid #fff;
+        }
+
+        .btn-mapa-astral:hover {
+            background-color: #20b954;
+            transform: scale(1.03);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+
+        .btn-mapa-astral i {
+            margin-right: 8px;
+            font-size: 1.3rem;
+        }
+
         /* Responsividade */
         @media (max-width: 992px) {
             .nav-menu {
@@ -730,6 +851,16 @@
 
             .map-container {
                 height: 300px;
+            }
+
+            .mapa-astral-header h2 {
+                font-size: 1.3rem;
+            }
+            .preco-valor {
+                font-size: 3rem;
+            }
+            .preco-valor::after {
+                font-size: 1rem;
             }
         }
 
@@ -1020,7 +1151,7 @@
                     <p> R$4 </p>
                 </div>
             </div>
-                    <div class="category-card" onclick="openLightbox(30">
+                    <div class="category-card" onclick="openLightbox(30)">
                 <div class="category-img" style="background-image: url('pedradeossum.jpeg')"></div>
                 <div class="category-content">
                     <h3>Pedra de Ossum </h3>
@@ -1042,7 +1173,7 @@
                     <p> R$11 </p>
                 </div>
             </div>
-        <div class="category-card" onclick="openLightbox(33">
+        <div class="category-card" onclick="openLightbox(33)">
                 <div class="category-img" style="background-image: url('bejerecum.jpeg')"></div>
                 <div class="category-content">
                     <h3>Fava Bejerecum</h3>
@@ -1096,6 +1227,29 @@
                 <p style="color: #ff4757; margin: 10px 0;">Promoção válida para Fevereiro</p>
                 
                 <a href="https://wa.me/5592994280161?text=Olá! Gostaria de agendar uma consulta com Baralho Cigano" class="btn" target="_blank">Agendar Consulta</a>
+            </div>
+        </div>
+
+        <!-- NOVO CARD: Mapa Astral e Análise Familiar -->
+        <div class="mapa-astral-card">
+            <div class="mapa-astral-header">
+                <h2>Mapa Natal e Análise Familiar</h2>
+            </div>
+            <div class="mapa-astral-body">
+                <div class="mapa-astral-list">
+                    <p>✅ <strong>Mapa Astral</strong></p>
+                    <p>✅ <strong>Análise profunda dos aspectos</strong></p>
+                    <p>✅ <strong>Estudo com até 3 pessoas</strong> <span>(aspectos familiares)</span></p>
+                </div>
+                <div class="mapa-astral-preco">
+                    <span class="preco-label">A partir de</span>
+                    <span class="preco-valor">100</span>
+                </div>
+                <div class="mapa-astral-contato">
+                    <a href="https://wa.me/5592994280161?text=Olá! Gostaria de agendar um Mapa Astral e Análise Familiar" target="_blank" class="btn-mapa-astral">
+                        <i class="fab fa-whatsapp"></i> Agendar: (92) 9 9428-0161
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -1218,7 +1372,7 @@
             </div>
         </div>
         
-        <div class="lightbox-counter" id="lightbox-counter">1/30</div>
+        <div class="lightbox-counter" id="lightbox-counter">1/42</div>
     </div>
 
     <a href="https://wa.me/5592994280161" class="whatsapp-float" target="_blank" title="Fale conosco">
@@ -1226,25 +1380,26 @@
     </a>
 
     <script>
-        // Array completo com todas as 30 imagens (índices 0-29)
+        // Array completo com todas as imagens
         const lightboxImages = [
-            // 0-20: Produtos originais (20 itens)
+            // 0-19: Produtos originais (20 itens)
             'esteira.jpeg', 'palhadacosta.jpeg', 'charutosarava.jpeg', 'novofumo.jpeg',
             'kitincenso.jpeg', 'novohungebe.jpeg', 'crocheodara2.jpeg', 'novocoral.jpeg',
             'kityawo.jpeg', 'kitpvelho.jpeg', 'lagdiba.jpeg', 'monjolo2.jpeg',
             'cachimb.jpeg', 'sixx.jpeg', 'duala.jpeg', 'punhal.jpeg',
             'poouro.jpeg', 'cascalhotigre.jpeg', 'novosegui.jpeg','agata.jpeg',
             
-            // 21-24: Ervas e Pós Africanos (6 itens)
+            // 20-36: Favas, Penas e Pós Africanos (17 itens)
             'obi.jpeg', 'pos.jpeg', 'aridan.jpeg', 'garra.jpeg', 'atare.jpeg', 'alibe.jpeg',
             'buziosafricano.jpeg', 'favaogum.jpeg', 'favaiemonja.jpeg', 'ossumpo.jpeg',
             'pedradeossum.jpeg', 'efum.jpeg', 'wagi.jpeg', 'bejerecum.jpeg',
-            'pimentadacosta.jpeg', 'orobo.jpeg', 'ekodide.jpeg',
-            // 25: Baralho Cigano
+            'pimentadacostacap.jpeg', 'orobo.jpeg', 'ekodide.jpeg',
+            
+            // 37: Baralho Cigano
             'baralho.png',
             
-            // 26-29: Produtos em Promoção (4 itens)
-            'racaopromocao.jpeg', 'saiapv.jpeg', 'camisumicrofibra.jpeg', 'kitsemiluxo.jpeg'
+            // 38-41: Produtos em Promoção (4 itens)
+            'racaopromocao.jpeg', 'promovo.jpeg', 'camisumicrofibra.jpeg', 'kitsemiluxo.jpeg'
         ];
 
         let currentImageIndex = 0;
@@ -1292,23 +1447,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
